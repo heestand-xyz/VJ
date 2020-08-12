@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		F094B20424E44C8D00039BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094B1EE24E44C8D00039BCD /* Assets.xcassets */; };
 		F094B20E24E44CBD00039BCD /* VJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VJModel.swift */; };
 		F094B20F24E44CBD00039BCD /* VJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VJModel.swift */; };
+		F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */ = {isa = PBXBuildFile; productRef = F094B21124E451A500039BCD /* MultiplatformTypes */; };
+		F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */ = {isa = PBXBuildFile; productRef = F094B21424E451AC00039BCD /* MultiplatformTypes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 				F094B1F524E44C8D00039BCD /* iOS */,
 				F094B1FC24E44C8D00039BCD /* macOS */,
 				F094B1F424E44C8D00039BCD /* Products */,
+				F094B21324E451AC00039BCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +99,13 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		F094B21324E451AC00039BCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +122,9 @@
 			dependencies = (
 			);
 			name = "VJ (iOS)";
+			packageProductDependencies = (
+				F094B21124E451A500039BCD /* MultiplatformTypes */,
+			);
 			productName = "VJ (iOS)";
 			productReference = F094B1F324E44C8D00039BCD /* VJ.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +142,9 @@
 			dependencies = (
 			);
 			name = "VJ (macOS)";
+			packageProductDependencies = (
+				F094B21424E451AC00039BCD /* MultiplatformTypes */,
+			);
 			productName = "VJ (macOS)";
 			productReference = F094B1FB24E44C8D00039BCD /* VJ.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +175,9 @@
 				Base,
 			);
 			mainGroup = F094B1E624E44C8B00039BCD;
+			packageReferences = (
+				F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */,
+			);
 			productRefGroup = F094B1F424E44C8D00039BCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,6 +466,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hexagons/MultiplatformTypes.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F094B21124E451A500039BCD /* MultiplatformTypes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */;
+			productName = MultiplatformTypes;
+		};
+		F094B21424E451AC00039BCD /* MultiplatformTypes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */;
+			productName = MultiplatformTypes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F094B1E724E44C8B00039BCD /* Project object */;
 }
