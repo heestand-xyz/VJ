@@ -12,9 +12,9 @@ struct ContentView: View {
     
     @EnvironmentObject var vj: VJModel
     
-    @State var tapOnCircleA: Bool = false
-    @State var tapOnCircleB: Bool = false
-    
+    @State var tapOnSmallCircles: [Bool] = []
+    @State var tapOnBigCircles: [Bool] = []
+
     var body: some View {
         
         ZStack {
@@ -23,12 +23,45 @@ struct ContentView: View {
 //            GeometryReader { geo in
 //                RadialGradient(gradient: Gradient(colors: [Color.clear, Color.primary]), center: .center, startRadius: 0.0, endRadius: geo.size.width / 2)
 //            }
-            
             VStack {
-                CircleView(on: $tapOnCircleA)
-                    .onInteract(on: $tapOnCircleA)
-                CircleView(on: $tapOnCircleB)
-                    .onInteract(on: $tapOnCircleB)
+                
+                ZStack {
+                    
+                    GridView(yCount: vj.yCount,
+                             tapOnCircles: $tapOnSmallCircles, hint: false)
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .border(Color.primary)
+                    
+                    GridView(yCount: vj.yCount - 2,
+                             tapOnCircles: $tapOnBigCircles, hint: false)
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .border(Color.primary)
+                    .blendMode(.difference)
+                    
+                }
+                .aspectRatio(16 / 9, contentMode: .fit)
+                
+            
+                HStack {
+                 
+                    GridView(yCount: vj.yCount,
+                             tapOnCircles: $tapOnSmallCircles, hint: true)
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .border(Color.primary)
+                    
+                    GridView(yCount: vj.yCount - 2,
+                             tapOnCircles: $tapOnBigCircles, hint: true)
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .border(Color.primary)
+                    
+                }
+                
+                HStack {
+                    Stepper("Y Count", value: $vj.yCount)
+                        .frame(width: 170)
+                }
+                .padding()
+                
             }
             
 //            InteractView { tap in
@@ -37,7 +70,6 @@ struct ContentView: View {
             
         }
             .opacity(vj.opacity)
-            .padding()
     }
     
 }

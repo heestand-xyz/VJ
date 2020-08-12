@@ -13,6 +13,8 @@ class VJModel: ObservableObject {
     
     @Published var opacity: Double = 1.0
     
+    @Published var yCount: Int = 5
+    
     @Published var tap: Bool = false
 //    @Published var tapIndexPre: Int = 0
 //    @Published var tapIndexPost: Int = 0

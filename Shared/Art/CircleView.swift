@@ -9,21 +9,21 @@ import SwiftUI
 
 struct CircleView: View {
     @Binding var on: Bool
+    var hint: Bool
     var body: some View {
         ZStack {
-            let width: CGFloat = 10
             Circle()
                 .foregroundColor(on ? .primary : .clear)
-                .padding(width)
-            Circle()
-                .strokeBorder(lineWidth: width)
-                .foregroundColor(on ? .clear : .primary)
+            if hint {
+                Circle()
+                    .strokeBorder()
+            }
         }
     }
 }
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView(on: .constant(true))
+        CircleView(on: .constant(true), hint: true)
     }
 }
