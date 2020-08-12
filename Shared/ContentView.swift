@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var vj: VJModel
     var body: some View {
-        Text("Hello, world!")
+        Circle()
+            .onTapGesture {
+                vj.opacity = 0.0
+                withAnimation {
+                    vj.opacity = 1.0
+                }
+            }
+            .opacity(vj.opacity)
             .padding()
     }
 }
@@ -17,5 +25,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(VJModel())
     }
 }

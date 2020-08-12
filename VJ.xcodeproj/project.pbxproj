@@ -13,6 +13,8 @@
 		F094B20224E44C8D00039BCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1ED24E44C8C00039BCD /* ContentView.swift */; };
 		F094B20324E44C8D00039BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094B1EE24E44C8D00039BCD /* Assets.xcassets */; };
 		F094B20424E44C8D00039BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094B1EE24E44C8D00039BCD /* Assets.xcassets */; };
+		F094B20E24E44CBD00039BCD /* VJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VJModel.swift */; };
+		F094B20F24E44CBD00039BCD /* VJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VJModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		F094B1FB24E44C8D00039BCD /* VJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F094B1FD24E44C8D00039BCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F094B1FE24E44C8D00039BCD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F094B20D24E44CBD00039BCD /* VJModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VJModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				F094B1EC24E44C8C00039BCD /* VJApp.swift */,
+				F094B20D24E44CBD00039BCD /* VJModel.swift */,
 				F094B1ED24E44C8C00039BCD /* ContentView.swift */,
 				F094B1EE24E44C8D00039BCD /* Assets.xcassets */,
 			);
@@ -189,6 +193,7 @@
 			files = (
 				F094B20124E44C8D00039BCD /* ContentView.swift in Sources */,
 				F094B1FF24E44C8D00039BCD /* VJApp.swift in Sources */,
+				F094B20E24E44CBD00039BCD /* VJModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +203,7 @@
 			files = (
 				F094B20224E44C8D00039BCD /* ContentView.swift in Sources */,
 				F094B20024E44C8D00039BCD /* VJApp.swift in Sources */,
+				F094B20F24E44CBD00039BCD /* VJModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct VJApp: App {
+    @StateObject var vj = VJModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vj)
         }
     }
 }
