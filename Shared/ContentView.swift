@@ -29,14 +29,14 @@ struct ContentView: View {
                     
                     GridView(yCount: vj.yCount,
                              tapOnCircles: $tapOnSmallCircles, hint: false)
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .border(Color.primary)
+                        .aspectRatio(16 / 9, contentMode: .fit)
+                        .clipped()
                     
                     GridView(yCount: vj.yCount - 2,
                              tapOnCircles: $tapOnBigCircles, hint: false)
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .border(Color.primary)
-                    .blendMode(.difference)
+                        .aspectRatio(16 / 9, contentMode: .fit)
+                        .clipped()
+                        .blendMode(.difference)
                     
                 }
                 .aspectRatio(16 / 9, contentMode: .fit)
@@ -46,13 +46,15 @@ struct ContentView: View {
                  
                     GridView(yCount: vj.yCount,
                              tapOnCircles: $tapOnSmallCircles, hint: true)
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .border(Color.primary)
+                        .aspectRatio(16 / 9, contentMode: .fit)
+                        .border(Color.primary)
+                        .clipped()
                     
                     GridView(yCount: vj.yCount - 2,
                              tapOnCircles: $tapOnBigCircles, hint: true)
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .border(Color.primary)
+                        .aspectRatio(16 / 9, contentMode: .fit)
+                        .border(Color.primary)
+                        .clipped()
                     
                 }
                 
