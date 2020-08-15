@@ -27,38 +27,81 @@ struct ContentView: View {
 //                RadialGradient(gradient: Gradient(colors: [Color.clear, Color.primary]), center: .center, startRadius: 0.0, endRadius: geo.size.width / 2)
 //            }
             
-            // Output
-            ZStack {
+            HStack {
                 
-                // Grids
-                Group {
+                Spacer()
+                
+                // Tweak
+                VStack(spacing: 20) {
                     
-                    GridView(yCount: vj.yCount,
-                             tapOnCircles: $tapOnSmallCircles, hint: false)
+                    // Opacity
+                    HStack(spacing: 20) {
                     
-                    GridView(yCount: vj.yCount - 2,
-                             tapOnCircles: $tapOnBigCircles, hint: false)
-                        .blendMode(colorScheme == .dark ? .difference : .normal)
+                        Button {
+                            vj.opacity = 0.0
+                        } label: {
+                            Image(systemName: "sun.min.fill")
+                        }
+                        .disabled(vj.opacity == 0.0)
+                        
+                        Slider(value: $vj.opacity)
+                            .frame(width: 200)
+                        
+                        Button {
+                            vj.opacity = 1.0
+                        } label: {
+                            Image(systemName: "sun.max.fill")
+                        }
+                        .disabled(vj.opacity == 1.0)
+                        
+                    }
+                    .font(.system(size: 30))
+                    
+                    // Count
+                    Stepper("", value: $vj.yCount)
+                        .frame(width: 100)
+                    
+                    Spacer()
                     
                 }
+                .padding()
                 
-                // Flash
-                Group {
-                    if vj.flash {
-                        Color.primary
+                Spacer()
+                
+                // Output
+                ZStack {
+                    
+                    // Grids
+                    Group {
+                        
+                        GridView(yCount: vj.yCount,
+                                 tapOnCircles: $tapOnSmallCircles, hint: true)
+                        
+                        GridView(yCount: vj.yCount - 2,
+                                 tapOnCircles: $tapOnBigCircles, hint: false)
                             .blendMode(colorScheme == .dark ? .difference : .normal)
+                        
                     }
-                    InteractView { interacted in
-                        vj.flash = interacted
+                    
+                    // Flash
+                    Group {
+                        if vj.flash {
+                            Color.primary
+                                .blendMode(colorScheme == .dark ? .difference : .normal)
+                        }
+                        InteractView { interacted in
+                            vj.flash = interacted
+                        }
                     }
+                    
                 }
+                .aspectRatio(16 / 9, contentMode: .fit)
+                .clipped()
+                .opacity(vj.opacity)
+                .airPlay()
+                .border(Color.primary)
                 
             }
-            .aspectRatio(16 / 9, contentMode: .fit)
-            .clipped()
-            .opacity(vj.opacity)
-            .airPlay()
-            .border(Color.primary)
             
             // Input
             HStack {
@@ -78,20 +121,6 @@ struct ContentView: View {
                 .clipped()
              
             }
-            
-            // Tweak
-            HStack {
-                
-                // Count
-                Stepper("", value: $vj.yCount)
-                    .frame(width: 100)
-                
-                // Opacity
-                Slider(value: $vj.opacity)
-                    .frame(width: 200)
-                
-            }
-            .padding()
             
         }
 

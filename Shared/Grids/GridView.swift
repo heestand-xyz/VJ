@@ -18,7 +18,7 @@ struct GridView: View {
                 Color.clear
                 if geo.size.height > 0.0 {
                     LazyVGrid(columns: [
-                        GridItem(.adaptive(minimum: length(size: geo.size) - 0.000_1), spacing: 0.0)
+                        GridItem(.adaptive(minimum: length(size: geo.size) - 0.1), spacing: 0.0)
                     ], spacing: 0.0, content: {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < tapOnCircles.count {
