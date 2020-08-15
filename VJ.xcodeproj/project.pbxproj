@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0381E9724E823CA00EFEC06 /* AirKit */; };
 		F094B1FF24E44C8D00039BCD /* VJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1EC24E44C8C00039BCD /* VJApp.swift */; };
 		F094B20024E44C8D00039BCD /* VJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1EC24E44C8C00039BCD /* VJApp.swift */; };
 		F094B20124E44C8D00039BCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1ED24E44C8C00039BCD /* ContentView.swift */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */,
 				F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +149,7 @@
 			name = "VJ (iOS)";
 			packageProductDependencies = (
 				F094B21124E451A500039BCD /* MultiplatformTypes */,
+				F0381E9724E823CA00EFEC06 /* AirKit */,
 			);
 			productName = "VJ (iOS)";
 			productReference = F094B1F324E44C8D00039BCD /* VJ.app */;
@@ -505,6 +508,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F0381E9724E823CA00EFEC06 /* AirKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AirKit;
+		};
 		F094B21124E451A500039BCD /* MultiplatformTypes */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */;

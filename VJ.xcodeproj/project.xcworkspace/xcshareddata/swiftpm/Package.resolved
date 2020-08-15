@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MultiplatformTypes",
+        "repositoryURL": "https://github.com/hexagons/MultiplatformTypes.git",
+        "state": {
+          "branch": null,
+          "revision": "2b1f929a2c8967e87003bc766d8cf0e1b3910166",
+          "version": "0.1.9"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -16,22 +16,25 @@ struct GridView: View {
         GeometryReader { geo in
             ZStack {
                 Color.clear
-                LazyVGrid(columns: [
-                    GridItem(.adaptive(minimum: length(size: geo.size) - 0.000_1), spacing: 0.0)
-                ], spacing: 0.0, content: {
-                    ForEach(0..<count(size: geo.size)) { i in
-                        if i < tapOnCircles.count {
-                            CircleView(on: $tapOnCircles[i], hint: hint)
-                                .onInteract(on: $tapOnCircles[i])
-                                .frame(width: length(size: geo.size),
-                                       height: length(size: geo.size))
+                if geo.size.height > 0.0 {
+                    LazyVGrid(columns: [
+                        GridItem(.adaptive(minimum: length(size: geo.size) - 0.000_1), spacing: 0.0)
+                    ], spacing: 0.0, content: {
+                        ForEach(0..<count(size: geo.size)) { i in
+                            if i < tapOnCircles.count {
+                                CircleView(on: $tapOnCircles[i], hint: hint)
+                                    .onInteract(on: $tapOnCircles[i])
+                                    .frame(width: length(size: geo.size),
+                                           height: length(size: geo.size))
+                            }
                         }
-                    }
-                })
-                .frame(width: length(size: geo.size) * CGFloat(xCount(size: geo.size)),
-                       height: length(size: geo.size) * CGFloat(yCount))
+                    })
+                    .frame(width: length(size: geo.size) * CGFloat(xCount(size: geo.size)),
+                           height: length(size: geo.size) * CGFloat(yCount))
+                }
             }
             .onAppear {
+                guard geo.size.height > 0.0 else { return }
                 tapOnCircles = [Bool](repeating: false, count: count(size: geo.size))
             }
             .onDisappear {

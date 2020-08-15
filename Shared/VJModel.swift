@@ -15,6 +15,19 @@ class VJModel: ObservableObject {
     
     @Published var yCount: Int = 5
     
+    @Published var flash: Bool = false
+//    {
+//        didSet {
+//            guard flash else { return }
+//            guard !flashing else { return }
+//            flashing = true
+//            time(3.0 / 100) {
+//                self.flashing = false
+//            }
+//        }
+//    }
+//    @Published var flashing: Bool = false
+    
     @Published var tap: Bool = false
 //    @Published var tapIndexPre: Int = 0
 //    @Published var tapIndexPost: Int = 0
@@ -27,5 +40,9 @@ class VJModel: ObservableObject {
 //            self.tapIndexPost += 1
 //        }), forMode: .common)
 //    }
+    
+    private func time(_ duration: Double, done: @escaping () -> ()) {
+        RunLoop.current.add(Timer(timeInterval: duration, repeats: false, block: { _ in done() }), forMode: .common)
+    }
     
 }

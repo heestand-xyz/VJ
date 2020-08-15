@@ -7,8 +7,11 @@
 
 import SwiftUI
 import MultiplatformTypes
+import AirKit
 
 struct ContentView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
     
     @EnvironmentObject var vj: VJModel
     
@@ -17,61 +20,81 @@ struct ContentView: View {
 
     var body: some View {
         
-        ZStack {
+        VStack {
             
 //            // Gradient Radial
 //            GeometryReader { geo in
 //                RadialGradient(gradient: Gradient(colors: [Color.clear, Color.primary]), center: .center, startRadius: 0.0, endRadius: geo.size.width / 2)
 //            }
-            VStack {
+            
+            // Output
+            ZStack {
                 
-                ZStack {
+                // Grids
+                Group {
                     
                     GridView(yCount: vj.yCount,
                              tapOnCircles: $tapOnSmallCircles, hint: false)
-                        .aspectRatio(16 / 9, contentMode: .fit)
-                        .clipped()
                     
                     GridView(yCount: vj.yCount - 2,
                              tapOnCircles: $tapOnBigCircles, hint: false)
-                        .aspectRatio(16 / 9, contentMode: .fit)
-                        .clipped()
-                        .blendMode(.difference)
+                        .blendMode(colorScheme == .dark ? .difference : .normal)
                     
                 }
-                .aspectRatio(16 / 9, contentMode: .fit)
                 
+                // Flash
+                Group {
+                    if vj.flash {
+                        Color.primary
+                            .blendMode(colorScheme == .dark ? .difference : .normal)
+                    }
+                    InteractView { interacted in
+                        vj.flash = interacted
+                    }
+                }
+                
+            }
+            .aspectRatio(16 / 9, contentMode: .fit)
+            .clipped()
+            .opacity(vj.opacity)
+            .airPlay()
+            .border(Color.primary)
             
-                HStack {
-                 
+            // Input
+            HStack {
+                    
+                // Grids
+                Group {
+                    
                     GridView(yCount: vj.yCount,
                              tapOnCircles: $tapOnSmallCircles, hint: true)
-                        .aspectRatio(16 / 9, contentMode: .fit)
-                        .border(Color.primary)
-                        .clipped()
                     
                     GridView(yCount: vj.yCount - 2,
                              tapOnCircles: $tapOnBigCircles, hint: true)
-                        .aspectRatio(16 / 9, contentMode: .fit)
-                        .border(Color.primary)
-                        .clipped()
                     
                 }
-                
-                HStack {
-                    Stepper("Y Count", value: $vj.yCount)
-                        .frame(width: 170)
-                }
-                .padding()
-                
+                .aspectRatio(16 / 9, contentMode: .fit)
+                .border(Color.primary)
+                .clipped()
+             
             }
             
-//            InteractView { tap in
-//                vj.tap = tap
-//            }
+            // Tweak
+            HStack {
+                
+                // Count
+                Stepper("", value: $vj.yCount)
+                    .frame(width: 100)
+                
+                // Opacity
+                Slider(value: $vj.opacity)
+                    .frame(width: 200)
+                
+            }
+            .padding()
             
         }
-            .opacity(vj.opacity)
+
     }
     
 }
