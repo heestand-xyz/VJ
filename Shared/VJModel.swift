@@ -13,7 +13,7 @@ class VJModel: ObservableObject {
     
     @Published var opacity: Double = 1.0
     
-    @Published var yCount: Int = 5
+    @Published var yCount: Int = 3
     
     @Published var flash: Bool = false
 //    {

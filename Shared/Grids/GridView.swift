@@ -22,8 +22,8 @@ struct GridView: View {
                     ], spacing: 0.0, content: {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < tapOnCircles.count {
-                                CircleView(on: $tapOnCircles[i], hint: hint)
-                                    .onInteract(on: $tapOnCircles[i])
+                                CircleView(on: isOn(at: i), hint: hint)
+                                    .onInteract(on: isOn(at: i))
                                     .frame(width: length(size: geo.size),
                                            height: length(size: geo.size))
                             }
@@ -37,10 +37,17 @@ struct GridView: View {
                 guard geo.size.height > 0.0 else { return }
                 tapOnCircles = [Bool](repeating: false, count: count(size: geo.size))
             }
-            .onDisappear {
-                tapOnCircles = []
-            }
         }
+    }
+    func isOn(at index: Int) -> Binding<Bool> {
+        Binding<Bool> {
+            guard index < tapOnCircles.count else { return false }
+            return tapOnCircles[index]
+        } set: { on in
+            guard index < tapOnCircles.count else { return }
+            tapOnCircles[index] = on
+        }
+
     }
     func xCount(size: CGSize) -> Int {
         let xCount = Int(size.width / length(size: size))
