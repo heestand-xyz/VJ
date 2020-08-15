@@ -17,6 +17,9 @@ class VJModel: ObservableObject {
     @Published var yCount: Int = 3
     
     @Published var flash: Bool = false
+    
+    @Published var airPlaying: Bool = false
+    
 //    {
 //        didSet {
 //            guard flash else { return }
@@ -41,6 +44,12 @@ class VJModel: ObservableObject {
 //            self.tapIndexPost += 1
 //        }), forMode: .common)
 //    }
+    
+    init() {
+        Air.connection { connected in
+            self.airPlaying = connected
+        }
+    }
     
     private func time(_ duration: Double, done: @escaping () -> ()) {
         RunLoop.current.add(Timer(timeInterval: duration, repeats: false, block: { _ in done() }), forMode: .common)
