@@ -74,9 +74,7 @@
 			children = (
 				F094B1EC24E44C8C00039BCD /* VJApp.swift */,
 				F094B20D24E44CBD00039BCD /* VJModel.swift */,
-				F094B1ED24E44C8C00039BCD /* ContentView.swift */,
-				F0A65E7B24E47AF70090895D /* Grids */,
-				F094B21924E4568100039BCD /* Art */,
+				F0D9894C24E875D4005C3E7B /* Views */,
 				F094B1EE24E44C8D00039BCD /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -115,12 +113,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F094B21924E4568100039BCD /* Art */ = {
+		F094B21924E4568100039BCD /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
 				F094B21624E4563300039BCD /* CircleView.swift */,
 			);
-			path = Art;
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		F0A65E7B24E47AF70090895D /* Grids */ = {
@@ -129,6 +127,16 @@
 				F0A65E7C24E47B090090895D /* GridView.swift */,
 			);
 			path = Grids;
+			sourceTree = "<group>";
+		};
+		F0D9894C24E875D4005C3E7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F094B1ED24E44C8C00039BCD /* ContentView.swift */,
+				F0A65E7B24E47AF70090895D /* Grids */,
+				F094B21924E4568100039BCD /* Shapes */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

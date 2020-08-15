@@ -13,7 +13,7 @@ struct VJApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(vj)
+                .environmentObject(vj)       
         }
     }
 }

@@ -31,8 +31,11 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                // Tweak
+                // Settings
                 VStack(spacing: 20) {
+                    
+                    Image(systemName: "airplayvideo")
+                        .foregroundColor(vj.isAirPlaying ? .primary : .red)
                     
                     // Opacity
                     HStack(spacing: 20) {
@@ -75,11 +78,11 @@ struct ContentView: View {
                     Group {
                         
                         GridView(yCount: vj.yCount,
-                                 tapOnCircles: $tapOnSmallCircles, hint: true)
+                                 tapOnCircles: $tapOnSmallCircles)
                         
                         GridView(yCount: vj.yCount - 2,
-                                 tapOnCircles: $tapOnBigCircles, hint: false)
-                            .blendMode(colorScheme == .dark ? .difference : .normal)
+                                 tapOnCircles: $tapOnBigCircles)
+                            .blendMode(.difference)
                         
                     }
                     
@@ -87,7 +90,7 @@ struct ContentView: View {
                     Group {
                         if vj.flash {
                             Color.primary
-                                .blendMode(colorScheme == .dark ? .difference : .normal)
+                                .blendMode(.difference)
                         }
                         InteractView { interacted in
                             vj.flash = interacted

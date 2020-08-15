@@ -18,7 +18,7 @@ class VJModel: ObservableObject {
     
     @Published var flash: Bool = false
     
-    @Published var airPlaying: Bool = false
+    @Published var isAirPlaying: Bool = false
     
 //    {
 //        didSet {
@@ -47,7 +47,7 @@ class VJModel: ObservableObject {
     
     init() {
         Air.connection { connected in
-            self.airPlaying = connected
+            self.isAirPlaying = connected
         }
     }
     

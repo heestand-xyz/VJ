@@ -13,10 +13,11 @@ struct CircleView: View {
     var body: some View {
         ZStack {
             Circle()
-                .foregroundColor(on ? .primary : .clear)
+                .foregroundColor(on ? .white : .clear)
             if hint {
                 Circle()
                     .strokeBorder()
+                    .foregroundColor(.white)
             }
         }
     }
