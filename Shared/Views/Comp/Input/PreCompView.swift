@@ -19,17 +19,13 @@ struct PreCompView: View {
         return HStack {
             
             if compSpot.isLeft {
-                Spacer()
                 CompSettingsView(comp: comp)
-                Spacer()
             }
             
             CompView(vj: vj, comp: comp, hint: true)
             
             if compSpot.isRight {
-                Spacer()
                 CompSettingsView(comp: comp)
-                Spacer()
             }
             
         }

@@ -14,6 +14,19 @@ struct CompSettingsView: View {
     var body: some View {
         
         VStack {
+            
+            Picker("", selection: Binding<Int>(get: {
+                comp.gridShape.rawValue
+            }, set: { index in
+                comp.gridShape = Comp.GridShape.allCases.first(where: { $0.rawValue == index })!
+            })) {
+                ForEach(Comp.GridShape.allCases) { gridShape in
+                    Image(systemName: gridShape.systemName)
+                        .tag(gridShape.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .frame(width: 150)
 
             // V Count
             Stepper("", value: $comp.vCount, in: 0...VideoJockey.vCountMax)

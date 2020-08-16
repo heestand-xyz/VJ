@@ -28,11 +28,21 @@ class Comp: ObservableObject {
     
     // MARK: - Grids
     
-    enum GridShape: CaseIterable {
+    enum GridShape: Int, Identifiable, CaseIterable {
+        var id: Int { rawValue }
         case squareCircles
         case hexagons
         case hexagonsCircles
+        var systemName: String {
+            switch self {
+            case .squareCircles: return "circle.grid.3x3.fill"
+            case .hexagons: return "hexagon.fill"
+            case .hexagonsCircles: return "circles.hexagongrid.fill"
+            }
+        }
     }
+    @Published var gridShape: GridShape = .hexagons
+    
     @Published var grids: [GridShape: [Int: [Bool]]] = [:]
     
     // MARK: - Life Cycle
