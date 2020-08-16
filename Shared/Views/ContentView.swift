@@ -109,9 +109,9 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        .blendMode(.difference)
                         
                     }
-                    .blendMode(.difference)
                     
                     // Flash
                     Group {

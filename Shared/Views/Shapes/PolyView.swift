@@ -14,10 +14,10 @@ struct PolyView: View {
     var hint: Bool
     var body: some View {
         ZStack {
-            Poly(count: count)
+            Poly(count: count, relativeCornerRadius: 1.0)
                 .foregroundColor(on ? .white : .clear)
             if hint {
-                Poly(count: count)
+                Poly(count: count, relativeCornerRadius: 1.0)
                     .stroke()
                     .foregroundColor(.white)
             }

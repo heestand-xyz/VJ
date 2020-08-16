@@ -8,11 +8,14 @@
 //
 
 import Foundation
+import CoreGraphics
 import AirKit
 
 class VJModel: ObservableObject {
     
     @Published var opacity: Double = 1.0
+    
+    @Published var relativeCornerRadius: CGFloat = 0.0
     
     // MARK: - Count
     
