@@ -10,6 +10,7 @@ import SwiftUI
 struct HexGridView: View {
     
     let yCount: Int
+    let relativeCornerRadius: CGFloat
     @Binding var grid: [Bool]
     var hint: Bool = false
     var beOdd: Bool = true
@@ -26,7 +27,7 @@ struct HexGridView: View {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < grid.count {
                                 
-                                PolyView(count: 6, on: isOn(at: i), hint: hint)
+                                PolyView(count: 6, relativeCornerRadius: relativeCornerRadius, on: isOn(at: i), hint: hint)
                                     .frame(width: length(size: geo.size),
                                            height: length(size: geo.size))
                                     .frame(width: width(size: geo.size),
@@ -115,6 +116,6 @@ struct HexGridView: View {
 
 struct HexGridView_Previews: PreviewProvider {
     static var previews: some View {
-        HexGridView(yCount: 3, grid: .constant([]), hint: true)
+        HexGridView(yCount: 3, relativeCornerRadius: 0.0, grid: .constant([]), hint: true)
     }
 }

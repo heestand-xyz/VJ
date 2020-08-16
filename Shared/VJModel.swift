@@ -17,6 +17,8 @@ class VJModel: ObservableObject {
     
     @Published var relativeCornerRadius: CGFloat = 0.0
     
+    @Published var spacing: CGFloat = 0.0
+    
     // MARK: - Count
     
     let vCountMax: Int = 3

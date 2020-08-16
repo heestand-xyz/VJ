@@ -70,6 +70,9 @@ struct ContentView: View {
                     }
                     .font(.system(size: 30))
                     
+                    
+                    Slider(value: $vj.relativeCornerRadius)
+                    
                     Spacer()
                     
                 }
@@ -81,6 +84,9 @@ struct ContentView: View {
                 // Output on Air
                 ZStack {
                     
+                    // Background
+                    Color.black
+                    
                     // Grids
                     Group {
                         
@@ -88,7 +94,9 @@ struct ContentView: View {
                         ZStack {
                             ForEach(0..<(vj.vCountMax + 1)) { v in
                                 if vj.vCountA == v {
-                                    HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                    HexGridView(yCount: 1 + v * 2,
+                                                relativeCornerRadius: vj.relativeCornerRadius,
+                                                grid: Binding<[Bool]>(get: {
                                         vj.gridHexagonsA[v]!
                                     }, set: { values in
                                         vj.gridHexagonsA[v]! = values
@@ -101,7 +109,9 @@ struct ContentView: View {
                         ZStack {
                             ForEach(0..<(vj.vCountMax + 1)) { v in
                                 if vj.vCountB == v {
-                                    HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                    HexGridView(yCount: 1 + v * 2,
+                                                relativeCornerRadius: vj.relativeCornerRadius,
+                                                grid: Binding<[Bool]>(get: {
                                         vj.gridHexagonsB[v]!
                                     }, set: { values in
                                         vj.gridHexagonsB[v]! = values
@@ -109,9 +119,10 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .blendMode(.difference)
                         
                     }
+                    .compositingGroup()
+                    .blendMode(.difference)
                     
                     // Flash
                     Group {
@@ -143,7 +154,9 @@ struct ContentView: View {
                     ZStack {
                         ForEach(0..<(vj.vCountMax + 1)) { v in
                             if vj.vCountA == v {
-                                HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                HexGridView(yCount: 1 + v * 2,
+                                            relativeCornerRadius: vj.relativeCornerRadius,
+                                            grid: Binding<[Bool]>(get: {
                                     vj.gridHexagonsA[v]!
                                 }, set: { values in
                                     vj.gridHexagonsA[v]! = values
@@ -168,7 +181,9 @@ struct ContentView: View {
                     ZStack {
                         ForEach(0..<(vj.vCountMax + 1)) { v in
                             if vj.vCountB == v {
-                                HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                HexGridView(yCount: 1 + v * 2,
+                                            relativeCornerRadius: vj.relativeCornerRadius,
+                                            grid: Binding<[Bool]>(get: {
                                     vj.gridHexagonsB[v]!
                                 }, set: { values in
                                     vj.gridHexagonsB[v]! = values
