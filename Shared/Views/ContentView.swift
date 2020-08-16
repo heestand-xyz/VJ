@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @EnvironmentObject var vj: VideoJockey
+    @ObservedObject var vj: VideoJockey
     
     var body: some View {
         
@@ -28,17 +28,17 @@ struct ContentView: View {
                 Spacer()
                 
                 // Settings
-                SettingsView()
+                SettingsView(vj: vj)
                 
                 Spacer()
                 
                 // Output on Air
-                OutputView()
+                OutputView(vj: vj)
                 
             }
             
             // Input on iPad
-            InputView()
+            InputView(vj: vj)
             
         }
 
@@ -48,7 +48,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(vj: VideoJockey())
             .frame(width: { () -> CGFloat? in
                 #if os(macOS)
                 return 1920 * 0.25
@@ -62,6 +62,5 @@ struct ContentView_Previews: PreviewProvider {
                 return nil
                 #endif
             }())
-            .environmentObject(VideoJockey())
     }
 }

@@ -37,6 +37,10 @@
 		F094B21724E4563300039BCD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B21624E4563300039BCD /* CircleView.swift */; };
 		F094B21824E4563300039BCD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B21624E4563300039BCD /* CircleView.swift */; };
 		F0A65E7D24E47B090090895D /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A65E7C24E47B090090895D /* GridView.swift */; };
+		F0AC622624E9BFD300572CE9 /* PreCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC622524E9BFD300572CE9 /* PreCompView.swift */; };
+		F0AC622724E9BFD300572CE9 /* PreCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC622524E9BFD300572CE9 /* PreCompView.swift */; };
+		F0C9369D24E9CBD2002B9742 /* CompSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */; };
+		F0C9369E24E9CBD2002B9742 /* CompSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,8 @@
 		F094B20D24E44CBD00039BCD /* VideoJockey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoJockey.swift; sourceTree = "<group>"; };
 		F094B21624E4563300039BCD /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F0A65E7C24E47B090090895D /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		F0AC622524E9BFD300572CE9 /* PreCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCompView.swift; sourceTree = "<group>"; };
+		F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,14 +163,40 @@
 			path = Grids;
 			sourceTree = "<group>";
 		};
+		F0AC622424E9BE8300572CE9 /* Comp */ = {
+			isa = PBXGroup;
+			children = (
+				F04671BA24E9B93100C6921D /* CompView.swift */,
+				F0AC622824E9CB7400572CE9 /* Input */,
+				F0AC622924E9CB7D00572CE9 /* Output */,
+			);
+			path = Comp;
+			sourceTree = "<group>";
+		};
+		F0AC622824E9CB7400572CE9 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				F04671B224E9B27400C6921D /* InputView.swift */,
+				F0AC622524E9BFD300572CE9 /* PreCompView.swift */,
+				F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		F0AC622924E9CB7D00572CE9 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				F04671AF24E9B23C00C6921D /* OutputView.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
 		F0D9894C24E875D4005C3E7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F094B1ED24E44C8C00039BCD /* ContentView.swift */,
 				F04671AC24E9B1E700C6921D /* SettingsView.swift */,
-				F04671BA24E9B93100C6921D /* CompView.swift */,
-				F04671B224E9B27400C6921D /* InputView.swift */,
-				F04671AF24E9B23C00C6921D /* OutputView.swift */,
+				F0AC622424E9BE8300572CE9 /* Comp */,
 				F0A65E7B24E47AF70090895D /* Grids */,
 				F094B21924E4568100039BCD /* Shapes */,
 			);
@@ -281,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F094B21724E4563300039BCD /* CircleView.swift in Sources */,
+				F0AC622624E9BFD300572CE9 /* PreCompView.swift in Sources */,
 				F04671AD24E9B1E700C6921D /* SettingsView.swift in Sources */,
 				F094B20124E44C8D00039BCD /* ContentView.swift in Sources */,
 				F04671A724E95F4000C6921D /* HexGridView.swift in Sources */,
@@ -289,6 +322,7 @@
 				F04671BB24E9B93100C6921D /* CompView.swift in Sources */,
 				F0A65E7D24E47B090090895D /* GridView.swift in Sources */,
 				F04671B324E9B27400C6921D /* InputView.swift in Sources */,
+				F0C9369D24E9CBD2002B9742 /* CompSettingsView.swift in Sources */,
 				F094B20E24E44CBD00039BCD /* VideoJockey.swift in Sources */,
 				F04671B024E9B23C00C6921D /* OutputView.swift in Sources */,
 				F04671B624E9B89900C6921D /* Comp.swift in Sources */,
@@ -304,6 +338,8 @@
 				F04671BC24E9B93100C6921D /* CompView.swift in Sources */,
 				F04671A824E95F4000C6921D /* HexGridView.swift in Sources */,
 				F04671B724E9B89900C6921D /* Comp.swift in Sources */,
+				F0AC622724E9BFD300572CE9 /* PreCompView.swift in Sources */,
+				F0C9369E24E9CBD2002B9742 /* CompSettingsView.swift in Sources */,
 				F04671AB24E9606E00C6921D /* PolyView.swift in Sources */,
 				F094B20224E44C8D00039BCD /* ContentView.swift in Sources */,
 				F094B20024E44C8D00039BCD /* VJApp.swift in Sources */,

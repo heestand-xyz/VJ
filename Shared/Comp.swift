@@ -15,6 +15,12 @@ class Comp: ObservableObject {
         case topRight
         case bottomLeft
         case bottomRight
+        var isLeft: Bool {
+            [.topLeft, .bottomLeft].contains(self)
+        }
+        var isRight: Bool {
+            [.topRight, .bottomRight].contains(self)
+        }
     }
 
     @Published var vCount: Int = 2

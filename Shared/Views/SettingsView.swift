@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @EnvironmentObject var vj: VideoJockey
+    @ObservedObject var vj: VideoJockey
     
     var body: some View {
         
@@ -37,7 +37,7 @@ struct SettingsView: View {
                     Image(systemName: "airplayvideo")
                         .font(.system(size: 25, weight: .bold, design: .default))
                 } else {
-                    Text("No HDMI...")
+                    Text("No HDMI")
                         .font(.caption)
                 }
                 
@@ -99,7 +99,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
-            .environmentObject(VideoJockey())
+        SettingsView(vj: VideoJockey())
     }
 }

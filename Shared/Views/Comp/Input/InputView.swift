@@ -10,7 +10,7 @@ import MultiplatformTypes
 
 struct InputView: View {
     
-    @EnvironmentObject var vj: VideoJockey
+    @ObservedObject var vj: VideoJockey
     
     var body: some View {
         
@@ -18,17 +18,17 @@ struct InputView: View {
         
             HStack(spacing: 0.0) {
                     
-                CompView(comp: vj.comps[.topLeft]!)
+                PreCompView(vj: vj, compSpot: .topLeft)
                 
-                CompView(comp: vj.comps[.topRight]!)
+                PreCompView(vj: vj, compSpot: .topRight)
                 
             }
             
             HStack(spacing: 0.0) {
                     
-                CompView(comp: vj.comps[.bottomLeft]!)
+                PreCompView(vj: vj, compSpot: .bottomLeft)
                 
-                CompView(comp: vj.comps[.bottomRight]!)
+                PreCompView(vj: vj, compSpot: .bottomRight)
                 
             }
             
@@ -40,7 +40,6 @@ struct InputView: View {
 
 struct InputView_Previews: PreviewProvider {
     static var previews: some View {
-        InputView()
-            .environmentObject(VideoJockey())
+        InputView(vj: VideoJockey())
     }
 }

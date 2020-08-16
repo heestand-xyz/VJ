@@ -10,7 +10,7 @@ import MultiplatformTypes
 
 struct OutputView: View {
     
-    @EnvironmentObject var vj: VideoJockey
+    @ObservedObject var vj: VideoJockey
     
     var body: some View {
         
@@ -22,7 +22,7 @@ struct OutputView: View {
             // Comps
             ForEach(Comp.Spot.allCases) { compSpot in
                 
-                CompView(comp: vj.comps[compSpot]!)
+                CompView(vj: vj, comp: vj.comps[compSpot]!)
                     .compositingGroup()
                     .blendMode(.difference)
                 
@@ -52,7 +52,6 @@ struct OutputView: View {
 
 struct OutputView_Previews: PreviewProvider {
     static var previews: some View {
-        OutputView()
-            .environmentObject(VideoJockey())
+        OutputView(vj: VideoJockey())
     }
 }
