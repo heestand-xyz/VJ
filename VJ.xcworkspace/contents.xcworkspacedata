@@ -10,4 +10,7 @@
    <FileRef
       location = "group:../../../Packages/Swift/AirKit">
    </FileRef>
+   <FileRef
+      location = "group:../../../Packages/Swift/PolyKit">
+   </FileRef>
 </Workspace>

@@ -10,7 +10,7 @@ import SwiftUI
 struct GridView: View {
     
     let yCount: Int
-    @Binding var tapOnCircles: [Bool]
+    @Binding var grid: [Bool]
     var hint: Bool = false
     var beOdd: Bool = true
     
@@ -24,7 +24,7 @@ struct GridView: View {
                         GridItem(.adaptive(minimum: length(size: geo.size) - 0.1), spacing: 0.0)
                     ], spacing: 0.0, content: {
                         ForEach(0..<count(size: geo.size)) { i in
-                            if i < tapOnCircles.count {
+                            if i < grid.count {
                                 
                                 CircleView(on: isOn(at: i), hint: hint)
                                     .onInteract(on: isOn(at: i))
@@ -41,18 +41,18 @@ struct GridView: View {
             }
             .onAppear {
                 guard geo.size.height > 0.0 else { return }
-                tapOnCircles = [Bool](repeating: false, count: count(size: geo.size))
+                grid = [Bool](repeating: false, count: count(size: geo.size))
             }
         }
     }
     
     func isOn(at index: Int) -> Binding<Bool> {
         Binding<Bool> {
-            guard index < tapOnCircles.count else { return false }
-            return tapOnCircles[index]
+            guard index < grid.count else { return false }
+            return grid[index]
         } set: { on in
-            guard index < tapOnCircles.count else { return }
-            tapOnCircles[index] = on
+            guard index < grid.count else { return }
+            grid[index] = on
         }
 
     }
@@ -77,6 +77,6 @@ struct GridView: View {
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        GridView(yCount: 3, tapOnCircles: .constant([]), hint: true)
+        GridView(yCount: 3, grid: .constant([]), hint: true)
     }
 }

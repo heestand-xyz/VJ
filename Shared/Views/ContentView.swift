@@ -15,9 +15,6 @@ struct ContentView: View {
     
     @EnvironmentObject var vj: VJModel
     
-    @State var tapOnSmallCircles: [Bool] = []
-    @State var tapOnBigCircles: [Bool] = []
-
     var body: some View {
         
         VStack {
@@ -33,9 +30,23 @@ struct ContentView: View {
                 
                 // Settings
                 VStack(spacing: 20) {
-                    
-                    Image(systemName: "airplayvideo")
-                        .foregroundColor(vj.isAirPlaying ? .primary : .red)
+                
+                    // Header
+                    HStack {
+                        
+                        Image("VJ")
+                            .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 75, height: 75)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "airplayvideo")
+                            .font(.system(size: 25, weight: .bold, design: .default))
+                            .foregroundColor(vj.isAirPlaying ? .primary : .clear)
+                        
+                    }
                     
                     // Opacity
                     HStack(spacing: 20) {
@@ -48,7 +59,6 @@ struct ContentView: View {
                         .disabled(vj.opacity == 0.0)
                         
                         Slider(value: $vj.opacity)
-                            .frame(width: 200)
                         
                         Button {
                             vj.opacity = 1.0
@@ -60,31 +70,48 @@ struct ContentView: View {
                     }
                     .font(.system(size: 30))
                     
-                    // Count
-                    Stepper("", value: $vj.yCount)
-                        .frame(width: 100)
-                    
                     Spacer()
                     
                 }
+                .frame(width: 250)
                 .padding()
                 
                 Spacer()
                 
-                // Output
+                // Output on Air
                 ZStack {
                     
                     // Grids
                     Group {
                         
-                        GridView(yCount: vj.yCount,
-                                 tapOnCircles: $tapOnSmallCircles)
+                        // A
+                        ZStack {
+                            ForEach(0..<(vj.vCountMax + 1)) { v in
+                                if vj.vCountA == v {
+                                    HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                        vj.gridHexagonsA[v]!
+                                    }, set: { values in
+                                        vj.gridHexagonsA[v]! = values
+                                    }))
+                                }
+                            }
+                        }
                         
-                        GridView(yCount: vj.yCount - 2,
-                                 tapOnCircles: $tapOnBigCircles)
-                            .blendMode(.difference)
+                        // B
+                        ZStack {
+                            ForEach(0..<(vj.vCountMax + 1)) { v in
+                                if vj.vCountB == v {
+                                    HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                        vj.gridHexagonsB[v]!
+                                    }, set: { values in
+                                        vj.gridHexagonsB[v]! = values
+                                    }))
+                                }
+                            }
+                        }
                         
                     }
+                    .blendMode(.difference)
                     
                     // Flash
                     Group {
@@ -106,22 +133,59 @@ struct ContentView: View {
                 
             }
             
-            // Input
-            HStack {
+            // Input on iPad
+            HStack(spacing: 0.0) {
                     
-                // Grids
-                Group {
+                // A
+                VStack {
                     
-                    GridView(yCount: vj.yCount,
-                             tapOnCircles: $tapOnSmallCircles, hint: true)
+                    // Grid A
+                    ZStack {
+                        ForEach(0..<(vj.vCountMax + 1)) { v in
+                            if vj.vCountA == v {
+                                HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                    vj.gridHexagonsA[v]!
+                                }, set: { values in
+                                    vj.gridHexagonsA[v]! = values
+                                }), hint: true)
+                            }
+                        }
+                    }
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .border(Color.primary)
+                    .clipped()
                     
-                    GridView(yCount: vj.yCount - 2,
-                             tapOnCircles: $tapOnBigCircles, hint: true)
-                    
+                    // V Count A
+                    Stepper("", value: $vj.vCountA, in: 0...vj.vCountMax)
+                        .frame(width: 100)
+                        .offset(x: -4)
                 }
-                .aspectRatio(16 / 9, contentMode: .fit)
-                .border(Color.primary)
-                .clipped()
+                
+                // B
+                VStack {
+                    
+                    // Grid V
+                    ZStack {
+                        ForEach(0..<(vj.vCountMax + 1)) { v in
+                            if vj.vCountB == v {
+                                HexGridView(yCount: 1 + v * 2, grid: Binding<[Bool]>(get: {
+                                    vj.gridHexagonsB[v]!
+                                }, set: { values in
+                                    vj.gridHexagonsB[v]! = values
+                                }), hint: true)
+                            }
+                        }
+                    }
+                    .aspectRatio(16 / 9, contentMode: .fit)
+                    .border(Color.primary)
+                    .clipped()
+                    
+                    
+                    // V Count A
+                    Stepper("", value: $vj.vCountB, in: 0...vj.vCountMax)
+                        .frame(width: 100)
+                        .offset(x: -4)
+                }
              
             }
             

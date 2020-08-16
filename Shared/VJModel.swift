@@ -14,45 +14,44 @@ class VJModel: ObservableObject {
     
     @Published var opacity: Double = 1.0
     
-    @Published var yCount: Int = 3
+    // MARK: - Count
+    
+    let vCountMax: Int = 3
+    @Published var vCountA: Int = 2
+    var yCountA: Int { 1 + vCountA * 2 }
+    @Published var vCountB: Int = 1
+    var yCountB: Int { 1 + vCountB * 2 }
+    
+    // MARK: - Grids
+    
+    @Published var gridCirclesA: [Int: [Bool]] = [:]
+    @Published var gridCirclesB: [Int: [Bool]] = [:]
+    @Published var gridHexagonsA: [Int: [Bool]] = [:]
+    @Published var gridHexagonsB: [Int: [Bool]] = [:]
+
+    // MARK: - Other
     
     @Published var flash: Bool = false
     
     @Published var isAirPlaying: Bool = false
     
-//    {
-//        didSet {
-//            guard flash else { return }
-//            guard !flashing else { return }
-//            flashing = true
-//            time(3.0 / 100) {
-//                self.flashing = false
-//            }
-//        }
-//    }
-//    @Published var flashing: Bool = false
-    
     @Published var tap: Bool = false
-//    @Published var tapIndexPre: Int = 0
-//    @Published var tapIndexPost: Int = 0
-
-//    func onTap() {
-//        tap = true
-//        tapIndexPre += 1
-//        RunLoop.current.add(Timer(timeInterval: 1.0 / 6.0, repeats: false, block: { _ in
-//            self.tap = false
-//            self.tapIndexPost += 1
-//        }), forMode: .common)
-//    }
+    
+    // MARK: - Life Cycle
     
     init() {
+        
+        for v in 0...vCountMax {
+            gridCirclesA[v] = []
+            gridCirclesB[v] = []
+            gridHexagonsA[v] = []
+            gridHexagonsB[v] = []
+        }
+        
         Air.connection { connected in
             self.isAirPlaying = connected
         }
-    }
-    
-    private func time(_ duration: Double, done: @escaping () -> ()) {
-        RunLoop.current.add(Timer(timeInterval: duration, repeats: false, block: { _ in done() }), forMode: .common)
+        
     }
     
 }
