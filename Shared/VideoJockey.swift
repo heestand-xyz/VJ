@@ -11,7 +11,7 @@ import Foundation
 import CoreGraphics
 import AirKit
 
-class VJModel: ObservableObject {
+class VideoJockey: ObservableObject {
     
     @Published var opacity: Double = 1.0
     
@@ -19,21 +19,14 @@ class VJModel: ObservableObject {
     
     @Published var spacing: CGFloat = 0.0
     
+    // MARK: - Comps
+    
+    var comps: [Comp.Spot: Comp] = [:]
+    
     // MARK: - Count
     
-    let vCountMax: Int = 3
-    @Published var vCountA: Int = 2
-    var yCountA: Int { 1 + vCountA * 2 }
-    @Published var vCountB: Int = 1
-    var yCountB: Int { 1 + vCountB * 2 }
+    static let vCountMax: Int = 3
     
-    // MARK: - Grids
-    
-    @Published var gridCirclesA: [Int: [Bool]] = [:]
-    @Published var gridCirclesB: [Int: [Bool]] = [:]
-    @Published var gridHexagonsA: [Int: [Bool]] = [:]
-    @Published var gridHexagonsB: [Int: [Bool]] = [:]
-
     // MARK: - Other
     
     @Published var flash: Bool = false
@@ -46,11 +39,8 @@ class VJModel: ObservableObject {
     
     init() {
         
-        for v in 0...vCountMax {
-            gridCirclesA[v] = []
-            gridCirclesB[v] = []
-            gridHexagonsA[v] = []
-            gridHexagonsB[v] = []
+        for compSpot in Comp.Spot.allCases {
+            comps[compSpot] = Comp()
         }
         
         Air.connection { connected in

@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
-import MultiplatformTypes
 import AirKit
 
 struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    @EnvironmentObject var vj: VJModel
+    @EnvironmentObject var vj: VideoJockey
     
     var body: some View {
         
@@ -29,180 +28,17 @@ struct ContentView: View {
                 Spacer()
                 
                 // Settings
-                VStack(spacing: 20) {
-                
-                    // Header
-                    HStack {
-                        
-                        Image("VJ")
-                            .resizable()
-                            .renderingMode(.template)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 75, height: 75)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "airplayvideo")
-                            .font(.system(size: 25, weight: .bold, design: .default))
-                            .foregroundColor(vj.isAirPlaying ? .primary : .clear)
-                        
-                    }
-                    
-                    // Opacity
-                    HStack(spacing: 20) {
-                    
-                        Button {
-                            vj.opacity = 0.0
-                        } label: {
-                            Image(systemName: "sun.min.fill")
-                        }
-                        .disabled(vj.opacity == 0.0)
-                        
-                        Slider(value: $vj.opacity)
-                        
-                        Button {
-                            vj.opacity = 1.0
-                        } label: {
-                            Image(systemName: "sun.max.fill")
-                        }
-                        .disabled(vj.opacity == 1.0)
-                        
-                    }
-                    .font(.system(size: 30))
-                    
-                    
-                    Slider(value: $vj.relativeCornerRadius)
-                    
-                    Spacer()
-                    
-                }
-                .frame(width: 250)
-                .padding()
+                SettingsView()
                 
                 Spacer()
                 
                 // Output on Air
-                ZStack {
-                    
-                    // Background
-                    Color.black
-                    
-                    // Grids
-                    Group {
-                        
-                        // A
-                        ZStack {
-                            ForEach(0..<(vj.vCountMax + 1)) { v in
-                                if vj.vCountA == v {
-                                    HexGridView(yCount: 1 + v * 2,
-                                                relativeCornerRadius: vj.relativeCornerRadius,
-                                                grid: Binding<[Bool]>(get: {
-                                        vj.gridHexagonsA[v]!
-                                    }, set: { values in
-                                        vj.gridHexagonsA[v]! = values
-                                    }))
-                                }
-                            }
-                        }
-                        
-                        // B
-                        ZStack {
-                            ForEach(0..<(vj.vCountMax + 1)) { v in
-                                if vj.vCountB == v {
-                                    HexGridView(yCount: 1 + v * 2,
-                                                relativeCornerRadius: vj.relativeCornerRadius,
-                                                grid: Binding<[Bool]>(get: {
-                                        vj.gridHexagonsB[v]!
-                                    }, set: { values in
-                                        vj.gridHexagonsB[v]! = values
-                                    }))
-                                }
-                            }
-                        }
-                        
-                    }
-                    .compositingGroup()
-                    .blendMode(.difference)
-                    
-                    // Flash
-                    Group {
-                        if vj.flash {
-                            Color.primary
-                                .blendMode(.difference)
-                        }
-                        InteractView { interacted in
-                            vj.flash = interacted
-                        }
-                    }
-                    
-                }
-                .aspectRatio(16 / 9, contentMode: .fit)
-                .clipped()
-                .opacity(vj.opacity)
-                .airPlay()
-                .border(Color.primary)
+                OutputView()
                 
             }
             
             // Input on iPad
-            HStack(spacing: 0.0) {
-                    
-                // A
-                VStack {
-                    
-                    // Grid A
-                    ZStack {
-                        ForEach(0..<(vj.vCountMax + 1)) { v in
-                            if vj.vCountA == v {
-                                HexGridView(yCount: 1 + v * 2,
-                                            relativeCornerRadius: vj.relativeCornerRadius,
-                                            grid: Binding<[Bool]>(get: {
-                                    vj.gridHexagonsA[v]!
-                                }, set: { values in
-                                    vj.gridHexagonsA[v]! = values
-                                }), hint: true)
-                            }
-                        }
-                    }
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .border(Color.primary)
-                    .clipped()
-                    
-                    // V Count A
-                    Stepper("", value: $vj.vCountA, in: 0...vj.vCountMax)
-                        .frame(width: 100)
-                        .offset(x: -4)
-                }
-                
-                // B
-                VStack {
-                    
-                    // Grid V
-                    ZStack {
-                        ForEach(0..<(vj.vCountMax + 1)) { v in
-                            if vj.vCountB == v {
-                                HexGridView(yCount: 1 + v * 2,
-                                            relativeCornerRadius: vj.relativeCornerRadius,
-                                            grid: Binding<[Bool]>(get: {
-                                    vj.gridHexagonsB[v]!
-                                }, set: { values in
-                                    vj.gridHexagonsB[v]! = values
-                                }), hint: true)
-                            }
-                        }
-                    }
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .border(Color.primary)
-                    .clipped()
-                    
-                    
-                    // V Count A
-                    Stepper("", value: $vj.vCountB, in: 0...vj.vCountMax)
-                        .frame(width: 100)
-                        .offset(x: -4)
-                }
-             
-            }
+            InputView()
             
         }
 
@@ -226,6 +62,6 @@ struct ContentView_Previews: PreviewProvider {
                 return nil
                 #endif
             }())
-            .environmentObject(VJModel())
+            .environmentObject(VideoJockey())
     }
 }

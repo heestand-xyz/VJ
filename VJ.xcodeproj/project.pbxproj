@@ -14,14 +14,24 @@
 		F04671A824E95F4000C6921D /* HexGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671A624E95F4000C6921D /* HexGridView.swift */; };
 		F04671AA24E9606E00C6921D /* PolyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671A924E9606E00C6921D /* PolyView.swift */; };
 		F04671AB24E9606E00C6921D /* PolyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671A924E9606E00C6921D /* PolyView.swift */; };
+		F04671AD24E9B1E700C6921D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671AC24E9B1E700C6921D /* SettingsView.swift */; };
+		F04671AE24E9B1E700C6921D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671AC24E9B1E700C6921D /* SettingsView.swift */; };
+		F04671B024E9B23C00C6921D /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671AF24E9B23C00C6921D /* OutputView.swift */; };
+		F04671B124E9B23C00C6921D /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671AF24E9B23C00C6921D /* OutputView.swift */; };
+		F04671B324E9B27400C6921D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671B224E9B27400C6921D /* InputView.swift */; };
+		F04671B424E9B27400C6921D /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671B224E9B27400C6921D /* InputView.swift */; };
+		F04671B624E9B89900C6921D /* Comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671B524E9B89900C6921D /* Comp.swift */; };
+		F04671B724E9B89900C6921D /* Comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671B524E9B89900C6921D /* Comp.swift */; };
+		F04671BB24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
+		F04671BC24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
 		F094B1FF24E44C8D00039BCD /* VJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1EC24E44C8C00039BCD /* VJApp.swift */; };
 		F094B20024E44C8D00039BCD /* VJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1EC24E44C8C00039BCD /* VJApp.swift */; };
 		F094B20124E44C8D00039BCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1ED24E44C8C00039BCD /* ContentView.swift */; };
 		F094B20224E44C8D00039BCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1ED24E44C8C00039BCD /* ContentView.swift */; };
 		F094B20324E44C8D00039BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094B1EE24E44C8D00039BCD /* Assets.xcassets */; };
 		F094B20424E44C8D00039BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094B1EE24E44C8D00039BCD /* Assets.xcassets */; };
-		F094B20E24E44CBD00039BCD /* VJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VJModel.swift */; };
-		F094B20F24E44CBD00039BCD /* VJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VJModel.swift */; };
+		F094B20E24E44CBD00039BCD /* VideoJockey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VideoJockey.swift */; };
+		F094B20F24E44CBD00039BCD /* VideoJockey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VideoJockey.swift */; };
 		F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */ = {isa = PBXBuildFile; productRef = F094B21124E451A500039BCD /* MultiplatformTypes */; };
 		F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */ = {isa = PBXBuildFile; productRef = F094B21424E451AC00039BCD /* MultiplatformTypes */; };
 		F094B21724E4563300039BCD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B21624E4563300039BCD /* CircleView.swift */; };
@@ -32,6 +42,11 @@
 /* Begin PBXFileReference section */
 		F04671A624E95F4000C6921D /* HexGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGridView.swift; sourceTree = "<group>"; };
 		F04671A924E9606E00C6921D /* PolyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyView.swift; sourceTree = "<group>"; };
+		F04671AC24E9B1E700C6921D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F04671AF24E9B23C00C6921D /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
+		F04671B224E9B27400C6921D /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		F04671B524E9B89900C6921D /* Comp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comp.swift; sourceTree = "<group>"; };
+		F04671BA24E9B93100C6921D /* CompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompView.swift; sourceTree = "<group>"; };
 		F094B1EC24E44C8C00039BCD /* VJApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VJApp.swift; sourceTree = "<group>"; };
 		F094B1ED24E44C8C00039BCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F094B1EE24E44C8D00039BCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,7 +55,7 @@
 		F094B1FB24E44C8D00039BCD /* VJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F094B1FD24E44C8D00039BCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F094B1FE24E44C8D00039BCD /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		F094B20D24E44CBD00039BCD /* VJModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VJModel.swift; sourceTree = "<group>"; };
+		F094B20D24E44CBD00039BCD /* VideoJockey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoJockey.swift; sourceTree = "<group>"; };
 		F094B21624E4563300039BCD /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		F0A65E7C24E47B090090895D /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				F094B1EC24E44C8C00039BCD /* VJApp.swift */,
-				F094B20D24E44CBD00039BCD /* VJModel.swift */,
+				F094B20D24E44CBD00039BCD /* VideoJockey.swift */,
+				F04671B524E9B89900C6921D /* Comp.swift */,
 				F0D9894C24E875D4005C3E7B /* Views */,
 				F094B1EE24E44C8D00039BCD /* Assets.xcassets */,
 			);
@@ -145,6 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				F094B1ED24E44C8C00039BCD /* ContentView.swift */,
+				F04671AC24E9B1E700C6921D /* SettingsView.swift */,
+				F04671BA24E9B93100C6921D /* CompView.swift */,
+				F04671B224E9B27400C6921D /* InputView.swift */,
+				F04671AF24E9B23C00C6921D /* OutputView.swift */,
 				F0A65E7B24E47AF70090895D /* Grids */,
 				F094B21924E4568100039BCD /* Shapes */,
 			);
@@ -261,12 +281,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F094B21724E4563300039BCD /* CircleView.swift in Sources */,
+				F04671AD24E9B1E700C6921D /* SettingsView.swift in Sources */,
 				F094B20124E44C8D00039BCD /* ContentView.swift in Sources */,
 				F04671A724E95F4000C6921D /* HexGridView.swift in Sources */,
 				F094B1FF24E44C8D00039BCD /* VJApp.swift in Sources */,
 				F04671AA24E9606E00C6921D /* PolyView.swift in Sources */,
+				F04671BB24E9B93100C6921D /* CompView.swift in Sources */,
 				F0A65E7D24E47B090090895D /* GridView.swift in Sources */,
-				F094B20E24E44CBD00039BCD /* VJModel.swift in Sources */,
+				F04671B324E9B27400C6921D /* InputView.swift in Sources */,
+				F094B20E24E44CBD00039BCD /* VideoJockey.swift in Sources */,
+				F04671B024E9B23C00C6921D /* OutputView.swift in Sources */,
+				F04671B624E9B89900C6921D /* Comp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04671AE24E9B1E700C6921D /* SettingsView.swift in Sources */,
 				F094B21824E4563300039BCD /* CircleView.swift in Sources */,
+				F04671BC24E9B93100C6921D /* CompView.swift in Sources */,
 				F04671A824E95F4000C6921D /* HexGridView.swift in Sources */,
+				F04671B724E9B89900C6921D /* Comp.swift in Sources */,
 				F04671AB24E9606E00C6921D /* PolyView.swift in Sources */,
 				F094B20224E44C8D00039BCD /* ContentView.swift in Sources */,
 				F094B20024E44C8D00039BCD /* VJApp.swift in Sources */,
-				F094B20F24E44CBD00039BCD /* VJModel.swift in Sources */,
+				F04671B424E9B27400C6921D /* InputView.swift in Sources */,
+				F094B20F24E44CBD00039BCD /* VideoJockey.swift in Sources */,
+				F04671B124E9B23C00C6921D /* OutputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

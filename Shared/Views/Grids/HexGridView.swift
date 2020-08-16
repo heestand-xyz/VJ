@@ -11,6 +11,7 @@ struct HexGridView: View {
     
     let yCount: Int
     let relativeCornerRadius: CGFloat
+    var asCircle: Bool = false
     @Binding var grid: [Bool]
     var hint: Bool = false
     var beOdd: Bool = true
@@ -27,7 +28,13 @@ struct HexGridView: View {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < grid.count {
                                 
-                                PolyView(count: 6, relativeCornerRadius: relativeCornerRadius, on: isOn(at: i), hint: hint)
+                                Group {
+                                    if asCircle {
+                                        Circle()
+                                    } else {
+                                        PolyView(count: 6, relativeCornerRadius: relativeCornerRadius, on: isOn(at: i), hint: hint)
+                                    }
+                                }
                                     .frame(width: length(size: geo.size),
                                            height: length(size: geo.size))
                                     .frame(width: width(size: geo.size),

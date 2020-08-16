@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct VJApp: App {
-    @StateObject var vj = VJModel()
+    @StateObject var vj = VideoJockey()
     var body: some Scene {
         WindowGroup {
             ContentView()

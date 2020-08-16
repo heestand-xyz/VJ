@@ -1,0 +1,105 @@
+//
+//  SettingsView.swift
+//  VJ
+//
+//  Created by Cappuccino on 2020-08-16.
+//
+
+import SwiftUI
+
+struct SettingsView: View {
+    
+    @EnvironmentObject var vj: VideoJockey
+    
+    var body: some View {
+        
+        VStack(spacing: 20) {
+        
+            // Header
+            HStack {
+                
+                Group {
+                    
+                    Image("VJ")
+                        .resizable()
+                        .renderingMode(.template)
+                    
+                    Image("Hexagons")
+                        .resizable()
+                    
+                }
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 75, height: 75)
+                
+                Spacer()
+                
+                if vj.isAirPlaying {
+                    Image(systemName: "airplayvideo")
+                        .font(.system(size: 25, weight: .bold, design: .default))
+                } else {
+                    Text("No HDMI...")
+                        .font(.caption)
+                }
+                
+            }
+            
+            // Opacity
+            HStack(spacing: 20) {
+            
+                Button {
+                    vj.opacity = 0.0
+                } label: {
+                    Image(systemName: "sun.min" + (vj.opacity == 0.0 ? "" : ".fill"))
+                }
+                .disabled(vj.opacity == 0.0)
+                
+                Slider(value: $vj.opacity)
+                
+                Button {
+                    vj.opacity = 1.0
+                } label: {
+                    Image(systemName: "sun.max" + (vj.opacity == 1.0 ? "" : ".fill"))
+                }
+                .disabled(vj.opacity == 1.0)
+                
+            }
+            .font(.system(size: 30))
+            
+            // Relative Corner Radius
+            HStack(spacing: 20) {
+            
+                Button {
+                    vj.relativeCornerRadius = 0.0
+                } label: {
+                    Image(systemName: "hexagon" + (vj.relativeCornerRadius == 0.0 ? "" : ".fill"))
+                }
+                .disabled(vj.relativeCornerRadius == 0.0)
+                
+                Slider(value: $vj.relativeCornerRadius)
+                
+                Button {
+                    vj.relativeCornerRadius = 1.0
+                } label: {
+                    Image(systemName: "circle" + (vj.relativeCornerRadius == 1.0 ? "" : ".fill"))
+                }
+                .disabled(vj.relativeCornerRadius == 1.0)
+                
+            }
+            .font(.system(size: 30))
+            
+            Spacer()
+            
+        }
+        .frame(width: 250)
+        .padding()
+        
+    }
+    
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
+            .environmentObject(VideoJockey())
+    }
+}
