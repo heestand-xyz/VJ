@@ -16,7 +16,7 @@ struct PreCompView: View {
         
         let comp: Comp = vj.comps[compSpot]!
         
-        return HStack {
+        return HStack(spacing: 0.0) {
             
             if compSpot.isLeft {
                 CompSettingsView(comp: comp)

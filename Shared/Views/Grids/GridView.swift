@@ -70,7 +70,7 @@ struct GridView: View {
     }
     
     func length(size: CGSize) -> CGFloat {
-        size.height / CGFloat(yCount)
+        (size.height * 0.99) / CGFloat(yCount)
     }
     
 }

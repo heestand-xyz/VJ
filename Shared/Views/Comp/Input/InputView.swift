@@ -33,6 +33,7 @@ struct InputView: View {
             }
             
         }
+        .frame(height: 500)
         
     }
     

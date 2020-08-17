@@ -65,28 +65,6 @@ struct SettingsView: View {
             }
             .font(.system(size: 30))
             
-            // Relative Corner Radius
-            HStack(spacing: 20) {
-            
-                Button {
-                    vj.relativeCornerRadius = 0.0
-                } label: {
-                    Image(systemName: "hexagon" + (vj.relativeCornerRadius == 0.0 ? "" : ".fill"))
-                }
-                .disabled(vj.relativeCornerRadius == 0.0)
-                
-                Slider(value: $vj.relativeCornerRadius)
-                
-                Button {
-                    vj.relativeCornerRadius = 1.0
-                } label: {
-                    Image(systemName: "circle" + (vj.relativeCornerRadius == 1.0 ? "" : ".fill"))
-                }
-                .disabled(vj.relativeCornerRadius == 1.0)
-                
-            }
-            .font(.system(size: 30))
-            
             Spacer()
             
         }

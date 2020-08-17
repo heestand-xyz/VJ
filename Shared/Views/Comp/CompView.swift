@@ -36,7 +36,7 @@ struct CompView: View {
                     case .hexagons:
                         
                         HexGridView(yCount: 1 + v * 2,
-                                    relativeCornerRadius: vj.relativeCornerRadius,
+                                    corner: comp.corner,
                                     grid: Binding<[Bool]>(get: {
                                         comp.grids[.hexagons]![v]!
                                     }, set: { values in
@@ -46,7 +46,7 @@ struct CompView: View {
                     case .hexagonsCircles:
                         
                         HexGridView(yCount: 1 + v * 2,
-                                    relativeCornerRadius: vj.relativeCornerRadius,
+                                    corner: 0.0,
                                     asCircle: true,
                                     grid: Binding<[Bool]>(get: {
                                         comp.grids[.hexagonsCircles]![v]!

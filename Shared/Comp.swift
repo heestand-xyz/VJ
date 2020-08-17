@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import CoreGraphics
 
 class Comp: ObservableObject {
+    
+    @Published var corner: CGFloat = 0.0
     
     enum Spot: Int, Identifiable, CaseIterable {
         var id: Int { rawValue }

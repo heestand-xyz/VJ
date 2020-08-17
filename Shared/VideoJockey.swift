@@ -15,8 +15,6 @@ class VideoJockey: ObservableObject {
     
     @Published var opacity: Double = 1.0
     
-    @Published var relativeCornerRadius: CGFloat = 0.0
-    
     @Published var spacing: CGFloat = 0.0
     
     // MARK: - Comps

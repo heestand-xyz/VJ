@@ -10,15 +10,15 @@ import PolyKit
 
 struct PolyView: View {
     let count: Int
-    let relativeCornerRadius: CGFloat
+    let corner: CGFloat
     @Binding var on: Bool
     var hint: Bool
     var body: some View {
         ZStack {
-            Poly(count: count, relativeCornerRadius: relativeCornerRadius)
+            Poly(count: count, relativeCornerRadius: corner)
                 .foregroundColor(on ? .white : .clear)
             if hint {
-                Poly(count: count, relativeCornerRadius: relativeCornerRadius)
+                Poly(count: count, relativeCornerRadius: corner)
                     .stroke()
                     .foregroundColor(.white)
             }
@@ -28,6 +28,6 @@ struct PolyView: View {
 
 struct PolyView_Previews: PreviewProvider {
     static var previews: some View {
-        PolyView(count: 6, relativeCornerRadius: 0.0, on: .constant(true), hint: true)
+        PolyView(count: 6, corner: 0.0, on: .constant(true), hint: true)
     }
 }

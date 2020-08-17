@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PolyKit
 
 struct CompSettingsView: View {
     
@@ -26,14 +27,23 @@ struct CompSettingsView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 150)
 
             // V Count
             Stepper("", value: $comp.vCount, in: 0...VideoJockey.vCountMax)
                 .frame(width: 100)
                 .offset(x: -4)
 
+            if comp.gridShape == .hexagons {
+                
+                CornerSettingView(corner: $comp.corner)
+                
+                Spacer()
+                
+            }
+            
         }
+        .frame(width: 150)
+        .padding(10)
         
     }
     
