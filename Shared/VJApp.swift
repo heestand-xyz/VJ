@@ -12,7 +12,7 @@ struct VJApp: App {
     @StateObject var vj = VideoJockey()
     var body: some Scene {
         WindowGroup {
-            ContentView(vj: vj)       
+            ContentView(vj: vj)
         }
     }
 }

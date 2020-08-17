@@ -65,6 +65,7 @@ struct SettingsView: View {
                 .disabled(vj.opacity == 1.0)
                 
             }
+            .buttonStyle(PlainButtonStyle())
             .font(.system(size: 30))
             
             Spacer()

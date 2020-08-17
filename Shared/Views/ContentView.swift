@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+#if canImport(AirKit)
+import AirKit
+#endif
 
 struct ContentView: View {
     
@@ -33,6 +36,8 @@ struct ContentView: View {
                 
                 // Output on Air
                 OutputView(vj: vj)
+                    .air()
+                    .border(Color.primary)
                 
             }
             
@@ -43,6 +48,16 @@ struct ContentView: View {
 
     }
     
+}
+
+extension View {
+    func air() -> some View {
+        #if canImport(AirKit)
+        return self.airPlay()
+        #else
+        return self
+        #endif
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

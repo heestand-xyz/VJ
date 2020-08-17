@@ -19,45 +19,38 @@ struct OutputView: View {
             // Background
             Color.black
             
-            // Comps
-            ForEach(Comp.Spot.allCases) { compSpot in
+            // Content
+            ZStack {
                 
-                CompView(vj: vj, comp: vj.comps[compSpot]!)
-                    .compositingGroup()
-                    .blendMode(.difference)
-                
-            }
-            
-            // Flash
-            Group {
-                if vj.flash {
-                    Color.primary
+                // Comps
+                ForEach(Comp.Spot.allCases) { compSpot in
+                    
+                    CompView(vj: vj, comp: vj.comps[compSpot]!)
+                        .compositingGroup()
                         .blendMode(.difference)
+                    
                 }
-                InteractView { interacted in
-                    vj.flash = interacted
+                
+                // Flash
+                Group {
+                    if vj.flash {
+                        Color.primary
+                            .blendMode(.difference)
+                    }
+                    InteractView { interacted in
+                        vj.flash = interacted
+                    }
                 }
+                
             }
+            .opacity(vj.opacity)
             
         }
         .aspectRatio(16 / 9, contentMode: .fit)
         .clipped()
-        .opacity(vj.opacity)
-        .air()
-        .border(Color.primary)
         
     }
     
-}
-
-extension View {
-    func air() -> some View {
-        #if canImport(AirKit)
-        return .airPlay()
-        #else
-        return self
-        #endif
-    }
 }
 
 

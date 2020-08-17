@@ -12,6 +12,10 @@ import CoreGraphics
 #if canImport(AirKit)
 import AirKit
 #endif
+import SwiftUI
+#if canImport(AppKit)
+import AppKit
+#endif
 
 class VideoJockey: ObservableObject {
     
@@ -51,6 +55,26 @@ class VideoJockey: ObservableObject {
         }
         #endif
         
+        #if os(macOS)
+        DispatchQueue.main.async {
+            self.present()
+        }
+        #endif
+        
     }
+    
+    #if os(macOS)
+    func present() {
+        let window: NSWindow = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 100, height: 100),
+                                        styleMask: [.titled, .miniaturizable, .fullSizeContentView, .resizable],
+                                        backing: .buffered, defer: false)
+        window.contentView = NSHostingView(rootView:
+                                            ZStack {
+                                                Color.black
+                                                OutputView(vj: self)
+                                            })
+        window.makeKeyAndOrderFront(nil)
+    }
+    #endif
     
 }
