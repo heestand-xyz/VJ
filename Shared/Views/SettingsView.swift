@@ -33,6 +33,7 @@ struct SettingsView: View {
                 
                 Spacer()
                 
+                #if canImport(AirKit)
                 if vj.isAirPlaying {
                     Image(systemName: "airplayvideo")
                         .font(.system(size: 25, weight: .bold, design: .default))
@@ -40,6 +41,7 @@ struct SettingsView: View {
                     Text("No HDMI")
                         .font(.caption)
                 }
+                #endif
                 
             }
             

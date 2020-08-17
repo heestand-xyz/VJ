@@ -58,14 +58,11 @@ struct CornerSettingView: View {
                     if corner == 1.0 {
                         Poly(count: 6, relativeCornerRadius: 1.0)
                             .stroke(lineWidth: 3)
-                            .border(Color.red)
                     } else {
                         Poly(count: 6, relativeCornerRadius: 1.0)
-                            .border(Color.red)
                     }
                 }
                 .disabled(corner == 1.0)
-                .border(Color.blue)
                 
             }
             .font(.system(size: 30))

@@ -24,6 +24,7 @@
 		F04671B724E9B89900C6921D /* Comp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671B524E9B89900C6921D /* Comp.swift */; };
 		F04671BB24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
 		F04671BC24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
+		F0642F8024EAE2A000693C7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A65E7C24E47B090090895D /* GridView.swift */; };
 		F07B98B424EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F07B98B524EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F094B1FF24E44C8D00039BCD /* VJApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B1EC24E44C8C00039BCD /* VJApp.swift */; };
@@ -359,6 +360,7 @@
 				F094B20024E44C8D00039BCD /* VJApp.swift in Sources */,
 				F04671B424E9B27400C6921D /* InputView.swift in Sources */,
 				F094B20F24E44CBD00039BCD /* VideoJockey.swift in Sources */,
+				F0642F8024EAE2A000693C7E /* GridView.swift in Sources */,
 				F04671B124E9B23C00C6921D /* OutputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

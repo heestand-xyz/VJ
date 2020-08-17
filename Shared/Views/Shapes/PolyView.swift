@@ -10,7 +10,7 @@ import PolyKit
 
 struct PolyView: View {
     let count: Int
-    let corner: CGFloat
+    @Binding var corner: CGFloat
     @Binding var on: Bool
     var hint: Bool
     var body: some View {
@@ -28,6 +28,6 @@ struct PolyView: View {
 
 struct PolyView_Previews: PreviewProvider {
     static var previews: some View {
-        PolyView(count: 6, corner: 0.0, on: .constant(true), hint: true)
+        PolyView(count: 6, corner: .constant(0.0), on: .constant(true), hint: true)
     }
 }

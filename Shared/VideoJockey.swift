@@ -9,7 +9,9 @@
 
 import Foundation
 import CoreGraphics
+#if canImport(AirKit)
 import AirKit
+#endif
 
 class VideoJockey: ObservableObject {
     
@@ -29,7 +31,9 @@ class VideoJockey: ObservableObject {
     
     @Published var flash: Bool = false
     
+    #if canImport(AirKit)
     @Published var isAirPlaying: Bool = false
+    #endif
     
     @Published var tap: Bool = false
     
@@ -41,9 +45,11 @@ class VideoJockey: ObservableObject {
             comps[compSpot] = Comp()
         }
         
+        #if canImport(AirKit)
         Air.connection { connected in
             self.isAirPlaying = connected
         }
+        #endif
         
     }
     

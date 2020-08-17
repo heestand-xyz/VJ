@@ -43,12 +43,23 @@ struct OutputView: View {
         .aspectRatio(16 / 9, contentMode: .fit)
         .clipped()
         .opacity(vj.opacity)
-        .airPlay()
+        .air()
         .border(Color.primary)
         
     }
     
 }
+
+extension View {
+    func air() -> some View {
+        #if canImport(AirKit)
+        return .airPlay()
+        #else
+        return self
+        #endif
+    }
+}
+
 
 struct OutputView_Previews: PreviewProvider {
     static var previews: some View {

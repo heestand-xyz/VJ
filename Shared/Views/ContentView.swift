@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AirKit
 
 struct ContentView: View {
     
