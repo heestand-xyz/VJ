@@ -27,10 +27,14 @@ struct ContentView: View {
             
             HStack {
                 
-                Spacer()
-                
                 // Settings
-                SettingsView(vj: vj)
+                VStack {
+                    
+                    SettingsView(vj: vj)
+                    
+                    Spacer()
+                    
+                }
                 
                 Spacer()
                 
@@ -38,6 +42,7 @@ struct ContentView: View {
                 OutputView(vj: vj)
                     .air()
                     .border(Color.primary)
+                    .hide(!vj.preview)
                 
             }
             
@@ -57,6 +62,19 @@ extension View {
         #else
         return self
         #endif
+    }
+}
+
+extension View {
+    func hide(_ hidden: Bool) -> some View {
+        Group {
+            if hidden {
+                self.hidden()
+                    .frame(width: 0, height: 0)
+            } else {
+                self
+            }
+        }
     }
 }
 

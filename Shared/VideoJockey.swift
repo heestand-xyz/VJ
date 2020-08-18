@@ -23,6 +23,8 @@ class VideoJockey: ObservableObject {
     
     @Published var spacing: CGFloat = 0.0
     
+    @Published var preview: Bool = true
+    
     // MARK: - Comps
     
     var comps: [Comp.Spot: Comp] = [:]

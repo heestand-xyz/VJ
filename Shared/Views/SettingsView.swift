@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MultiplatformTypes
 
 struct SettingsView: View {
     
@@ -33,15 +34,22 @@ struct SettingsView: View {
                 
                 Spacer()
                 
-                #if canImport(AirKit)
-                if vj.isAirPlaying {
-                    Image(systemName: "airplayvideo")
-                        .font(.system(size: 25, weight: .bold, design: .default))
-                } else {
-                    Text("No HDMI")
-                        .font(.caption)
+                // Output
+                VStack {
+                    
+                    #if canImport(AirKit)
+                    if vj.isAirPlaying {
+                        Image(systemName: "airplayvideo")
+                            .font(.system(size: 25, weight: .bold, design: .default))
+                    } else {
+                        Text("No HDMI")
+                            .font(.caption)
+                    }
+                    #endif
+                    
+                    BasicToggle(isOn: $vj.preview)
+                    
                 }
-                #endif
                 
             }
             
@@ -68,7 +76,7 @@ struct SettingsView: View {
             .buttonStyle(PlainButtonStyle())
             .font(.system(size: 30))
             
-            Spacer()
+//            Spacer()
             
         }
         .frame(width: 250)

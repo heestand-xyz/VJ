@@ -16,19 +16,33 @@ struct PreCompView: View {
         
         let comp: Comp = vj.comps[compSpot]!
         
-        return HStack(spacing: 0.0) {
+        return VStack(spacing: 0.0) {
             
-            if compSpot.isLeft {
+            if compSpot.isTop {
                 CompSettingsView(comp: comp)
             }
             
             CompView(vj: vj, comp: comp, hint: true)
             
-            if compSpot.isRight {
+            if compSpot.isBottom {
                 CompSettingsView(comp: comp)
             }
             
         }
+        
+//        return HStack(spacing: 0.0) {
+//
+//            if compSpot.isLeft {
+//                CompSettingsView(comp: comp)
+//            }
+//
+//            CompView(vj: vj, comp: comp, hint: true)
+//
+//            if compSpot.isRight {
+//                CompSettingsView(comp: comp)
+//            }
+//
+//        }
         
     }
     

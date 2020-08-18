@@ -24,6 +24,12 @@ class Comp: ObservableObject {
         var isRight: Bool {
             [.topRight, .bottomRight].contains(self)
         }
+        var isTop: Bool {
+            [.topLeft, .topRight].contains(self)
+        }
+        var isBottom: Bool {
+            [.bottomLeft, .bottomRight].contains(self)
+        }
     }
 
     @Published var vCount: Int = 2
