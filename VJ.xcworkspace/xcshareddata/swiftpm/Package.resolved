@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
-        "package": "MultiplatformTypes",
-        "repositoryURL": "https://github.com/hexagons/MultiplatformTypes.git",
+        "package": "CocoaAsyncSocket",
+        "repositoryURL": "https://github.com/robbiehanson/CocoaAsyncSocket",
         "state": {
           "branch": null,
-          "revision": "2b1f929a2c8967e87003bc766d8cf0e1b3910166",
-          "version": "0.1.9"
+          "revision": "0e00c967a010fc43ce528bd633d032f17158d393",
+          "version": "7.6.4"
+        }
+      },
+      {
+        "package": "OSCKit",
+        "repositoryURL": "https://github.com/sammysmallman/OSCKit.git",
+        "state": {
+          "branch": null,
+          "revision": "39a4bd650f437959ee90171a3751d5e81634e168",
+          "version": "2.0.1"
+        }
+      },
+      {
+        "package": "NetUtils",
+        "repositoryURL": "https://github.com/svdo/swift-netutils",
+        "state": {
+          "branch": null,
+          "revision": "d1251a380f41088547e4cfc8dc718a90c861a42b",
+          "version": "4.1.0"
         }
       }
     ]

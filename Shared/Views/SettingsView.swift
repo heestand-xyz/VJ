@@ -34,22 +34,17 @@ struct SettingsView: View {
                 
                 Spacer()
                 
-                // Output
-                VStack {
-                    
-                    #if canImport(AirKit)
+                #if canImport(AirKit)
+                Group {
                     if vj.isAirPlaying {
-                        Image(systemName: "airplayvideo")
-                            .font(.system(size: 25, weight: .bold, design: .default))
+                        Label("HDMI", systemImage: "airplayvideo")
                     } else {
                         Text("No HDMI")
-                            .font(.caption)
+                            .opacity(0.5)
                     }
-                    #endif
-                    
-                    BasicToggle(isOn: $vj.preview)
-                    
                 }
+                .mono()
+                #endif
                 
             }
             
@@ -75,8 +70,17 @@ struct SettingsView: View {
             }
             .buttonStyle(PlainButtonStyle())
             .font(.system(size: 30))
+            .bg()
             
-//            Spacer()
+            HStack {
+                
+                ToggleText(title: "Test", isOn: $vj.test)
+                
+                ToggleText(title: "Preview", isOn: $vj.preview)
+                
+                Spacer()
+                
+            }
             
         }
         .frame(width: 250)

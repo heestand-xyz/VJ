@@ -25,6 +25,8 @@ class VideoJockey: ObservableObject {
     
     @Published var preview: Bool = true
     
+    @Published var test: Bool = false
+    
     // MARK: - Comps
     
     var comps: [Comp.Spot: Comp] = [:]
@@ -43,9 +45,18 @@ class VideoJockey: ObservableObject {
     
     @Published var tap: Bool = false
     
+    // MARK: - OSC
+    
+    let oscIn: OSCIn
+    let oscOut: OSCOut
+    
     // MARK: - Life Cycle
     
     init() {
+        
+        oscIn = OSCIn()
+        oscOut = OSCOut()
+        oscOut.send()
         
         for compSpot in Comp.Spot.allCases {
             comps[compSpot] = Comp()

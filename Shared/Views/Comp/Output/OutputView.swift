@@ -42,6 +42,11 @@ struct OutputView: View {
                     }
                 }
                 
+                if vj.test {
+                    TestPattern()
+                        .blendMode(.difference)
+                }
+                
             }
             .opacity(vj.opacity)
             

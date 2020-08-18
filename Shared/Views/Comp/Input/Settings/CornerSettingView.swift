@@ -19,9 +19,7 @@ struct CornerSettingView: View {
             HStack {
                 
                 Button {
-                    withAnimation(.easeOut) {
-                        corner = 0.0
-                    }
+                    corner = 0.0
                 } label: {
                     if corner == 0.0 {
                         Poly(count: 6)
@@ -35,9 +33,7 @@ struct CornerSettingView: View {
                 Spacer()
                 
                 Button {
-                    withAnimation(.easeOut) {
-                        corner = 0.5
-                    }
+                    corner = 0.5
                 } label: {
                     if corner == 0.5 {
                         Poly(count: 6, relativeCornerRadius: 0.5)
@@ -51,9 +47,7 @@ struct CornerSettingView: View {
                 Spacer()
                 
                 Button {
-                    withAnimation(.easeOut) {
-                        corner = 1.0
-                    }
+                    corner = 1.0
                 } label: {
                     if corner == 1.0 {
                         Poly(count: 6, relativeCornerRadius: 1.0)
@@ -71,8 +65,7 @@ struct CornerSettingView: View {
             
             
         }
-        .padding(10)
-        .background(RoundedRectangle(cornerRadius: 10).opacity(0.1))
+        .bg()
         
     }
     
