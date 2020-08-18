@@ -12,37 +12,23 @@ struct PreCompView: View {
     @ObservedObject var vj: VideoJockey
     let compSpot: Comp.Spot
     
+    var comp: Comp { vj.comps[compSpot]! }
+    
     var body: some View {
         
-        let comp: Comp = vj.comps[compSpot]!
-        
-        return VStack(spacing: 0.0) {
-            
-            if compSpot.isTop {
+        HStack(spacing: 0.0) {
+
+            if compSpot.isLeft {
                 CompSettingsView(comp: comp)
             }
-            
+
             CompView(vj: vj, comp: comp, hint: true)
-            
-            if compSpot.isBottom {
+
+            if compSpot.isRight {
                 CompSettingsView(comp: comp)
             }
-            
+
         }
-        
-//        return HStack(spacing: 0.0) {
-//
-//            if compSpot.isLeft {
-//                CompSettingsView(comp: comp)
-//            }
-//
-//            CompView(vj: vj, comp: comp, hint: true)
-//
-//            if compSpot.isRight {
-//                CompSettingsView(comp: comp)
-//            }
-//
-//        }
         
     }
     
