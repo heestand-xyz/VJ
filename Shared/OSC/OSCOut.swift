@@ -41,12 +41,12 @@ class OSCOut: ObservableObject, OSCClientDelegate, OSCPacketDestination {
     // MARK: - Client
     
     func clientDidConnect(client: OSCClient) {
-        print("VJ OSC Out clientDidConnect client:", client.interface)
+        print("VJ OSC Out clientDidConnect client:", client.interface ?? "nil")
         connected = true
     }
     
     func clientDidDisconnect(client: OSCClient) {
-        print("VJ OSC Out clientDidDisconnect client:", client.interface)
+        print("VJ OSC Out clientDidDisconnect client:", client.interface ?? "nil")
         connected = false
     }
     

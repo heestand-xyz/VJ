@@ -15,38 +15,6 @@ struct SettingsView: View {
     var body: some View {
         
         VStack(spacing: 20) {
-        
-            // Header
-            HStack {
-                
-                Group {
-                    
-                    Image("VJ")
-                        .resizable()
-                        .renderingMode(.template)
-                    
-                    Image("Hexagons")
-                        .resizable()
-                    
-                }
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 75, height: 75)
-                
-                Spacer()
-                
-                #if canImport(AirKit)
-                Group {
-                    if vj.isAirPlaying {
-                        Label("HDMI", systemImage: "airplayvideo")
-                    } else {
-                        Text("No HDMI")
-                            .opacity(0.5)
-                    }
-                }
-                .mono()
-                #endif
-                
-            }
             
             // Opacity
             HStack(spacing: 20) {
@@ -74,17 +42,20 @@ struct SettingsView: View {
             
             HStack {
                 
-                ToggleText(title: "Test", isOn: $vj.test)
+                Pad(on: $vj.test, title: "Test", systemImage: "diamond")
+                    .frame(width: 100, height: 100)
                 
-                ToggleText(title: "Preview", isOn: $vj.preview)
-                
-                Spacer()
+                VStack {
+                    BasicToggle(isOn: $vj.preview)
+                    Label("View", systemImage: "rectangle.dashed")
+                        .mono()
+                }
+                .bg()
                 
             }
             
         }
-        .frame(width: 250)
-        .padding()
+        .padding(.horizontal)
         
     }
     

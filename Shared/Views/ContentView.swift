@@ -20,33 +20,40 @@ struct ContentView: View {
         
         VStack {
             
-//            // Gradient Radial
-//            GeometryReader { geo in
-//                RadialGradient(gradient: Gradient(colors: [Color.clear, Color.primary]), center: .center, startRadius: 0.0, endRadius: geo.size.width / 2)
-//            }
-            
-            HStack {
-                
-                // Settings
-                VStack {
+            GeometryReader { geo in
                     
-                    SettingsView(vj: vj)
+                HStack(spacing: 0.0) {
                     
-                    Spacer()
+                    // Status
+                    VStack {
+                        HStack {
+                            StatusView(vj: vj)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                    .frame(width: (geo.size.width - (geo.size.height * (16 / 9))) / 2)
+                    
+                    // Preview of Output
+                    if vj.preview {
+                        OutputView(vj: vj)
+                            .border(Color.primary)
+                    } else {
+                        Spacer()
+                    }
+                    
+                    // Settings
+                    VStack {
+                        SettingsView(vj: vj)
+                        Spacer()
+                    }
+                    .frame(width: (geo.size.width - (geo.size.height * (16 / 9))) / 2)
                     
                 }
                 
-                Spacer()
-                
-                // Output on Air
-                OutputView(vj: vj)
-                    .air()
-                    .border(Color.primary)
-                    .hide(!vj.preview)
-                
             }
             
-            // Input on iPad
+            // Input Content
             InputView(vj: vj)
             
         }
@@ -62,19 +69,6 @@ extension View {
         #else
         return self
         #endif
-    }
-}
-
-extension View {
-    func hide(_ hidden: Bool) -> some View {
-        Group {
-            if hidden {
-                self.hidden()
-                    .frame(width: 0, height: 0)
-            } else {
-                self
-            }
-        }
     }
 }
 

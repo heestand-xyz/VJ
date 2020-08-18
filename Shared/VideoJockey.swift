@@ -4,7 +4,7 @@
 //
 //  Created by Hexagons with Cappuccino on 2020-08-12.
 //
-//  Noise is just distant reflected sounds.
+//  Noise is just distant reflections.
 //
 
 import Foundation
@@ -16,12 +16,15 @@ import SwiftUI
 #if canImport(AppKit)
 import AppKit
 #endif
+import MultiplatformTypes
 
 class VideoJockey: ObservableObject {
     
+    // MARK: - Settings
+    
     @Published var opacity: Double = 1.0
     
-    @Published var spacing: CGFloat = 0.0
+//    @Published var spacing: CGFloat = 0.0
     
     @Published var preview: Bool = true
     
@@ -43,7 +46,7 @@ class VideoJockey: ObservableObject {
     @Published var isAirPlaying: Bool = false
     #endif
     
-    @Published var tap: Bool = false
+//    @Published var tap: Bool = false
     
     // MARK: - OSC
     
@@ -63,6 +66,7 @@ class VideoJockey: ObservableObject {
         }
         
         #if canImport(AirKit)
+        Air.play(AnyView(OutputView(vj: self)))
         Air.connection { connected in
             self.isAirPlaying = connected
         }

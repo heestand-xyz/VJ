@@ -35,8 +35,6 @@
 		F08C1D8624EC46AD00639315 /* OSCIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8424EC466400639315 /* OSCIn.swift */; };
 		F08C1D8824EC488000639315 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8724EC488000639315 /* TestPattern.swift */; };
 		F08C1D8924EC488000639315 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8724EC488000639315 /* TestPattern.swift */; };
-		F08C1D8B24EC495700639315 /* ToggleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8A24EC495700639315 /* ToggleText.swift */; };
-		F08C1D8C24EC495700639315 /* ToggleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8A24EC495700639315 /* ToggleText.swift */; };
 		F08C1D8E24EC4ACC00639315 /* BG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8D24EC4ACC00639315 /* BG.swift */; };
 		F08C1D8F24EC4ACC00639315 /* BG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8D24EC4ACC00639315 /* BG.swift */; };
 		F08C1D9224EC4BBD00639315 /* Mono.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D9124EC4BBD00639315 /* Mono.swift */; };
@@ -58,6 +56,12 @@
 		F0AC622724E9BFD300572CE9 /* PreCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC622524E9BFD300572CE9 /* PreCompView.swift */; };
 		F0C9369D24E9CBD2002B9742 /* CompSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */; };
 		F0C9369E24E9CBD2002B9742 /* CompSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */; };
+		F0F9F08624EC6BE800DDCA14 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9F08524EC6BE800DDCA14 /* StatusView.swift */; };
+		F0F9F08724EC6BE800DDCA14 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9F08524EC6BE800DDCA14 /* StatusView.swift */; };
+		F0F9F08A24EC6FBD00DDCA14 /* SliceRamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9F08924EC6FBD00DDCA14 /* SliceRamp.swift */; };
+		F0F9F08B24EC6FBD00DDCA14 /* SliceRamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9F08924EC6FBD00DDCA14 /* SliceRamp.swift */; };
+		F0F9F08D24EC725000DDCA14 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9F08C24EC725000DDCA14 /* Pad.swift */; };
+		F0F9F08E24EC725000DDCA14 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9F08C24EC725000DDCA14 /* Pad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +76,6 @@
 		F08C1D8024EC424000639315 /* OSCOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCOut.swift; sourceTree = "<group>"; };
 		F08C1D8424EC466400639315 /* OSCIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCIn.swift; sourceTree = "<group>"; };
 		F08C1D8724EC488000639315 /* TestPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPattern.swift; sourceTree = "<group>"; };
-		F08C1D8A24EC495700639315 /* ToggleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleText.swift; sourceTree = "<group>"; };
 		F08C1D8D24EC4ACC00639315 /* BG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BG.swift; sourceTree = "<group>"; };
 		F08C1D9124EC4BBD00639315 /* Mono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mono.swift; sourceTree = "<group>"; };
 		F094B1EC24E44C8C00039BCD /* VJApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VJApp.swift; sourceTree = "<group>"; };
@@ -88,6 +91,9 @@
 		F0A65E7C24E47B090090895D /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		F0AC622524E9BFD300572CE9 /* PreCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCompView.swift; sourceTree = "<group>"; };
 		F0C9369C24E9CBD2002B9742 /* CompSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompSettingsView.swift; sourceTree = "<group>"; };
+		F0F9F08524EC6BE800DDCA14 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		F0F9F08924EC6FBD00DDCA14 /* SliceRamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceRamp.swift; sourceTree = "<group>"; };
+		F0F9F08C24EC725000DDCA14 /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +142,8 @@
 		F08C1D9024EC4BAC00639315 /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				F08C1D8A24EC495700639315 /* ToggleText.swift */,
-				F08C1D8D24EC4ACC00639315 /* BG.swift */,
-				F08C1D9124EC4BBD00639315 /* Mono.swift */,
+				F0F9F08C24EC725000DDCA14 /* Pad.swift */,
+				F0F9F08F24EC73A700DDCA14 /* Extensions */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 		F08C1D9424EC4C7500639315 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				F0F9F08824EC6FAC00DDCA14 /* Ramps */,
 				F0A65E7B24E47AF70090895D /* Grids */,
 				F094B21924E4568100039BCD /* Shapes */,
 				F08C1D8724EC488000639315 /* TestPattern.swift */,
@@ -260,12 +266,30 @@
 			isa = PBXGroup;
 			children = (
 				F094B1ED24E44C8C00039BCD /* ContentView.swift */,
+				F0F9F08524EC6BE800DDCA14 /* StatusView.swift */,
 				F04671AC24E9B1E700C6921D /* SettingsView.swift */,
 				F0AC622424E9BE8300572CE9 /* Comp */,
 				F08C1D9424EC4C7500639315 /* Content */,
 				F08C1D9024EC4BAC00639315 /* Style */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F0F9F08824EC6FAC00DDCA14 /* Ramps */ = {
+			isa = PBXGroup;
+			children = (
+				F0F9F08924EC6FBD00DDCA14 /* SliceRamp.swift */,
+			);
+			path = Ramps;
+			sourceTree = "<group>";
+		};
+		F0F9F08F24EC73A700DDCA14 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F08C1D8D24EC4ACC00639315 /* BG.swift */,
+				F08C1D9124EC4BBD00639315 /* Mono.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,8 +406,8 @@
 			files = (
 				F094B21724E4563300039BCD /* CircleView.swift in Sources */,
 				F0AC622624E9BFD300572CE9 /* PreCompView.swift in Sources */,
+				F0F9F08A24EC6FBD00DDCA14 /* SliceRamp.swift in Sources */,
 				F08C1D8824EC488000639315 /* TestPattern.swift in Sources */,
-				F08C1D8B24EC495700639315 /* ToggleText.swift in Sources */,
 				F04671AD24E9B1E700C6921D /* SettingsView.swift in Sources */,
 				F094B20124E44C8D00039BCD /* ContentView.swift in Sources */,
 				F04671A724E95F4000C6921D /* HexGridView.swift in Sources */,
@@ -392,6 +416,8 @@
 				F04671AA24E9606E00C6921D /* PolyView.swift in Sources */,
 				F04671BB24E9B93100C6921D /* CompView.swift in Sources */,
 				F0A65E7D24E47B090090895D /* GridView.swift in Sources */,
+				F0F9F08624EC6BE800DDCA14 /* StatusView.swift in Sources */,
+				F0F9F08D24EC725000DDCA14 /* Pad.swift in Sources */,
 				F08C1D8124EC424000639315 /* OSCOut.swift in Sources */,
 				F08C1D9224EC4BBD00639315 /* Mono.swift in Sources */,
 				F04671B324E9B27400C6921D /* InputView.swift in Sources */,
@@ -410,8 +436,8 @@
 			files = (
 				F07B98B524EA977A00CF83A5 /* CornerSettingView.swift in Sources */,
 				F04671AE24E9B1E700C6921D /* SettingsView.swift in Sources */,
+				F0F9F08B24EC6FBD00DDCA14 /* SliceRamp.swift in Sources */,
 				F08C1D8924EC488000639315 /* TestPattern.swift in Sources */,
-				F08C1D8C24EC495700639315 /* ToggleText.swift in Sources */,
 				F094B21824E4563300039BCD /* CircleView.swift in Sources */,
 				F04671BC24E9B93100C6921D /* CompView.swift in Sources */,
 				F04671A824E95F4000C6921D /* HexGridView.swift in Sources */,
@@ -420,6 +446,8 @@
 				F0AC622724E9BFD300572CE9 /* PreCompView.swift in Sources */,
 				F0C9369E24E9CBD2002B9742 /* CompSettingsView.swift in Sources */,
 				F08C1D8624EC46AD00639315 /* OSCIn.swift in Sources */,
+				F0F9F08724EC6BE800DDCA14 /* StatusView.swift in Sources */,
+				F0F9F08E24EC725000DDCA14 /* Pad.swift in Sources */,
 				F04671AB24E9606E00C6921D /* PolyView.swift in Sources */,
 				F08C1D9324EC4BBD00639315 /* Mono.swift in Sources */,
 				F08C1D8224EC426600639315 /* OSCOut.swift in Sources */,
