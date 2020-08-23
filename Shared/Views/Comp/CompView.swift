@@ -63,7 +63,7 @@ struct CompView: View {
         
         }
         .aspectRatio(16 / 9, contentMode: .fit)
-        .border(Color.primary)
+        .border(vj.showBorder ? Color.primary : Color.clear)
         .clipped()
         
     }

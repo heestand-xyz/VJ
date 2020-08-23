@@ -43,7 +43,7 @@ struct ContentView: View {
                                 vj.flash = interacted
                             }
                         }
-                        .border(Color.primary)
+                        .border(vj.showBorder ? Color.primary : Color.clear)
                     } else {
                         Spacer()
                     }
@@ -58,6 +58,8 @@ struct ContentView: View {
                 }
                 
             }
+            
+            Divider()
             
             // Input Content
             InputView(vj: vj)

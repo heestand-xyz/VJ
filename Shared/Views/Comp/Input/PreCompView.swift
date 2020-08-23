@@ -20,11 +20,13 @@ struct PreCompView: View {
 
             if compSpot.isLeft {
                 CompSettingsView(comp: comp)
+                Divider()
             }
 
             CompView(vj: vj, comp: comp, hint: true)
 
             if compSpot.isRight {
+                Divider()
                 CompSettingsView(comp: comp)
             }
 

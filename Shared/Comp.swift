@@ -10,7 +10,8 @@ import CoreGraphics
 
 class Comp: ObservableObject {
     
-    @Published var corner: CGFloat = 0.0
+    // Relative Corner Radius for Hexagons
+    @Published var corner: CGFloat
     
     enum Spot: Int, Identifiable, CaseIterable {
         var id: Int { rawValue }
@@ -32,7 +33,7 @@ class Comp: ObservableObject {
         }
     }
 
-    @Published var vCount: Int = 2
+    @Published var vCount: Int
     var yCount: Int { 1 + vCount * 2 }
     
     // MARK: - Grids
@@ -50,13 +51,19 @@ class Comp: ObservableObject {
             }
         }
     }
-    @Published var gridShape: GridShape = .hexagons
+    @Published var gridShape: GridShape
     
     @Published var grids: [GridShape: [Int: [Bool]]] = [:]
     
     // MARK: - Life Cycle
     
-    init() {
+    init(vCount: Int = VideoJockey.vCountDefault, gridShape: GridShape = .hexagons, corner: CGFloat = 0.0) {
+        precondition(vCount >= 0)
+        precondition(vCount <= VideoJockey.vCountMax)
+        
+        self.vCount = vCount
+        self.gridShape = gridShape
+        self.corner = corner
         
         for gridShape in GridShape.allCases {
             var subGrids: [Int: [Bool]] = [:]

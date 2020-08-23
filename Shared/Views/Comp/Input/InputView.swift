@@ -14,19 +14,25 @@ struct InputView: View {
     
     var body: some View {
         
-        VStack(spacing: 0.0) {
+        VStack {
         
-            HStack(spacing: 0.0) {
+            HStack {
                     
                 PreCompView(vj: vj, compSpot: .topLeft)
+                
+                Divider()
                 
                 PreCompView(vj: vj, compSpot: .topRight)
                 
             }
             
-            HStack(spacing: 0.0) {
+            Divider()
+            
+            HStack {
                     
                 PreCompView(vj: vj, compSpot: .bottomLeft)
+                
+                Divider()
                 
                 PreCompView(vj: vj, compSpot: .bottomRight)
                 

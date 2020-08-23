@@ -34,13 +34,11 @@ struct CompSettingsView: View {
                 .offset(x: -4)
 
             if comp.gridShape == .hexagons {
-                
                 CornerSettingView(corner: $comp.corner)
-                
-                Spacer()
-                
             }
             
+            Spacer()
+        
         }
         .frame(width: 150)
         .padding(10)

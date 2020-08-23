@@ -32,6 +32,8 @@ class VideoJockey: ObservableObject {
     
     @Published var colorShift: CGFloat = 1.0
     
+    let showBorder: Bool = false
+    
     // MARK: - Comps
     
     var comps: [Comp.Spot: Comp] = [:]
@@ -39,6 +41,7 @@ class VideoJockey: ObservableObject {
     // MARK: - Count
     
     static let vCountMax: Int = 2
+    static let vCountDefault: Int = 1
     
     // MARK: - Other
     
@@ -66,7 +69,16 @@ class VideoJockey: ObservableObject {
         oscOut.send()
         
         for compSpot in Comp.Spot.allCases {
-            comps[compSpot] = Comp()
+            switch compSpot {
+            case .topLeft:
+                comps[compSpot] = Comp(vCount: 1, gridShape: .hexagons, corner: 0.0)
+            case .topRight:
+                comps[compSpot] = Comp(vCount: 1, gridShape: .hexagons, corner: 1.0)
+            case .bottomLeft:
+                comps[compSpot] = Comp(vCount: 0, gridShape: .hexagons, corner: 0.0)
+            case .bottomRight:
+                comps[compSpot] = Comp(vCount: 0, gridShape: .hexagons, corner: 1.0)
+            }
         }
         
         #if canImport(AirKit)

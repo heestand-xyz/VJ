@@ -11,39 +11,40 @@ struct FinalView: View {
     
     @ObservedObject var vj: VideoJockey
     
-    var output: some View { OutputView(vj: vj) }
+    var output: some View {
+        OutputView(vj: vj)
+            .compositingGroup()
+            .blendMode(.multiply)
+    }
     
     var body: some View {
         
         ZStack {
             
-            ZStack {
-                Color.red
-                output
-                    .compositingGroup()
-                    .blendMode(.multiply)
-            }
-            .compositingGroup()
-            .offset(x: -vj.colorShift)
+            Color.black
             
-            ZStack {
-                Color.green
-                output
-                    .compositingGroup()
-                    .blendMode(.multiply)
+            Group {
+                
+                ZStack {
+                    Color.red
+                    output
+                }
+                .offset(x: -vj.colorShift)
+                
+                ZStack {
+                    Color.green
+                    output
+                }
+                
+                ZStack {
+                    Color.blue
+                    output
+                }
+                .offset(x: vj.colorShift)
+                
             }
             .compositingGroup()
-            .blendMode(.screen)
-            
-            ZStack {
-                Color.blue
-                output
-                    .compositingGroup()
-                    .blendMode(.multiply)
-            }
-            .compositingGroup()
-            .blendMode(.screen)
-            .offset(x: vj.colorShift)
+            .blendMode(.plusLighter)
             
         }
         
