@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MultiplatformTypes
 
 struct OutputView: View {
     
@@ -32,14 +31,9 @@ struct OutputView: View {
                 }
                 
                 // Flash
-                Group {
-                    if vj.flash {
-                        Color.primary
-                            .blendMode(.difference)
-                    }
-                    InteractView { interacted in
-                        vj.flash = interacted
-                    }
+                if vj.flash {
+                    Color.primary
+                        .blendMode(.difference)
                 }
                 
                 if vj.test {

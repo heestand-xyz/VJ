@@ -9,6 +9,7 @@ import SwiftUI
 #if canImport(AirKit)
 import AirKit
 #endif
+import MultiplatformTypes
 
 struct ContentView: View {
     
@@ -34,10 +35,15 @@ struct ContentView: View {
                     }
                     .frame(width: (geo.size.width - (geo.size.height * (16 / 9))) / 2)
                     
-                    // Preview of Output
+                    // Preview of Final Output
                     if vj.preview {
-                        OutputView(vj: vj)
-                            .border(Color.primary)
+                        ZStack {
+                            FinalView(vj: vj)
+                            InteractView { interacted in
+                                vj.flash = interacted
+                            }
+                        }
+                        .border(Color.primary)
                     } else {
                         Spacer()
                     }

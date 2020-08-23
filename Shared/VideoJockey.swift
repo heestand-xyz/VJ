@@ -30,13 +30,15 @@ class VideoJockey: ObservableObject {
     
     @Published var test: Bool = false
     
+    @Published var colorShift: CGFloat = 1.0
+    
     // MARK: - Comps
     
     var comps: [Comp.Spot: Comp] = [:]
     
     // MARK: - Count
     
-    static let vCountMax: Int = 3
+    static let vCountMax: Int = 2
     
     // MARK: - Other
     
@@ -57,6 +59,8 @@ class VideoJockey: ObservableObject {
     
     init() {
         
+        // Global Blur
+        
         oscIn = OSCIn()
         oscOut = OSCOut()
         oscOut.send()
@@ -66,7 +70,7 @@ class VideoJockey: ObservableObject {
         }
         
         #if canImport(AirKit)
-        Air.play(AnyView(OutputView(vj: self)))
+        Air.play(AnyView(FinalView(vj: self)))
         Air.connection { connected in
             self.isAirPlaying = connected
         }
@@ -88,7 +92,7 @@ class VideoJockey: ObservableObject {
         window.contentView = NSHostingView(rootView:
                                             ZStack {
                                                 Color.black
-                                                OutputView(vj: self)
+                                                FinalView(vj: self)
                                             })
         window.makeKeyAndOrderFront(nil)
     }

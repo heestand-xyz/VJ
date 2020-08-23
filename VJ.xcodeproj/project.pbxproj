@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F020523D24F000F8000FFE80 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020523C24F000F8000FFE80 /* FinalView.swift */; };
+		F020523E24F000F8000FFE80 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020523C24F000F8000FFE80 /* FinalView.swift */; };
 		F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0381E9724E823CA00EFEC06 /* AirKit */; };
 		F04671A324E95F0400C6921D /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F04671A224E95F0400C6921D /* PolyKit */; };
 		F04671A524E95F0800C6921D /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F04671A424E95F0800C6921D /* PolyKit */; };
@@ -65,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F020523C24F000F8000FFE80 /* FinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
 		F04671A624E95F4000C6921D /* HexGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGridView.swift; sourceTree = "<group>"; };
 		F04671A924E9606E00C6921D /* PolyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyView.swift; sourceTree = "<group>"; };
 		F04671AC24E9B1E700C6921D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -257,6 +260,7 @@
 		F0AC622924E9CB7D00572CE9 /* Output */ = {
 			isa = PBXGroup;
 			children = (
+				F020523C24F000F8000FFE80 /* FinalView.swift */,
 				F04671AF24E9B23C00C6921D /* OutputView.swift */,
 			);
 			path = Output;
@@ -419,6 +423,7 @@
 				F0F9F08624EC6BE800DDCA14 /* StatusView.swift in Sources */,
 				F0F9F08D24EC725000DDCA14 /* Pad.swift in Sources */,
 				F08C1D8124EC424000639315 /* OSCOut.swift in Sources */,
+				F020523D24F000F8000FFE80 /* FinalView.swift in Sources */,
 				F08C1D9224EC4BBD00639315 /* Mono.swift in Sources */,
 				F04671B324E9B27400C6921D /* InputView.swift in Sources */,
 				F0C9369D24E9CBD2002B9742 /* CompSettingsView.swift in Sources */,
@@ -449,6 +454,7 @@
 				F0F9F08724EC6BE800DDCA14 /* StatusView.swift in Sources */,
 				F0F9F08E24EC725000DDCA14 /* Pad.swift in Sources */,
 				F04671AB24E9606E00C6921D /* PolyView.swift in Sources */,
+				F020523E24F000F8000FFE80 /* FinalView.swift in Sources */,
 				F08C1D9324EC4BBD00639315 /* Mono.swift in Sources */,
 				F08C1D8224EC426600639315 /* OSCOut.swift in Sources */,
 				F094B20224E44C8D00039BCD /* ContentView.swift in Sources */,
