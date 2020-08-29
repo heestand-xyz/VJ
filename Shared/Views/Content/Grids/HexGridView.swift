@@ -27,23 +27,17 @@ struct HexGridView: View {
                     ], spacing: 0.0, content: {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < grid.count {
-                                
-                                Group {
-                                    if asCircle {
-                                        CircleView(on: isOn(at: i), hint: hint)
-                                            .blendMode(.difference)
-                                    } else {
-                                        PolyView(count: 6, corner: $corner, on: isOn(at: i), hint: hint)
-                                    }
-                                }
-                                    .frame(width: length(size: geo.size),
-                                           height: length(size: geo.size))
-                                    .frame(width: width(size: geo.size),
-                                           height: height(size: geo.size))
-                                    .onInteract(on: isOn(at: i))
-                                    .offset(x: isOddRow(at: i, size: geo.size) ? width(size: geo.size) / 2 : 0.0)
-                                    .opacity(!isOutside(at: i, size: geo.size) ? 1.0 : 0.0)
-                                
+
+                                HexView(hint: hint,
+                                        asCircle: asCircle,
+                                        isOn: isOn(at: i),
+                                        corner: $corner,
+                                        length: length(size: geo.size),
+                                        width: width(size: geo.size),
+                                        height: height(size: geo.size),
+                                        isOddRow: isOddRow(at: i, size: geo.size),
+                                        isOutside: isOutside(at: i, size: geo.size))
+
                             }
                         }
                     })

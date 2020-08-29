@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F020523D24F000F8000FFE80 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020523C24F000F8000FFE80 /* FinalView.swift */; };
 		F020523E24F000F8000FFE80 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020523C24F000F8000FFE80 /* FinalView.swift */; };
+		F0349CF024FA6E3F00406864 /* HexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349CEF24FA6E3F00406864 /* HexView.swift */; };
+		F0349CF124FA6E3F00406864 /* HexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349CEF24FA6E3F00406864 /* HexView.swift */; };
 		F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0381E9724E823CA00EFEC06 /* AirKit */; };
 		F04671A324E95F0400C6921D /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F04671A224E95F0400C6921D /* PolyKit */; };
 		F04671A524E95F0800C6921D /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F04671A424E95F0800C6921D /* PolyKit */; };
@@ -68,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		F020523C24F000F8000FFE80 /* FinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
+		F0349CEF24FA6E3F00406864 /* HexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexView.swift; sourceTree = "<group>"; };
 		F04671A624E95F4000C6921D /* HexGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGridView.swift; sourceTree = "<group>"; };
 		F04671A924E9606E00C6921D /* PolyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyView.swift; sourceTree = "<group>"; };
 		F04671AC24E9B1E700C6921D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 			children = (
 				F094B21624E4563300039BCD /* CircleView.swift */,
 				F04671A924E9606E00C6921D /* PolyView.swift */,
+				F0349CEF24FA6E3F00406864 /* HexView.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -416,6 +420,7 @@
 				F094B20124E44C8D00039BCD /* ContentView.swift in Sources */,
 				F04671A724E95F4000C6921D /* HexGridView.swift in Sources */,
 				F094B1FF24E44C8D00039BCD /* VJApp.swift in Sources */,
+				F0349CF024FA6E3F00406864 /* HexView.swift in Sources */,
 				F08C1D8E24EC4ACC00639315 /* BG.swift in Sources */,
 				F04671AA24E9606E00C6921D /* PolyView.swift in Sources */,
 				F04671BB24E9B93100C6921D /* CompView.swift in Sources */,
@@ -447,6 +452,7 @@
 				F04671BC24E9B93100C6921D /* CompView.swift in Sources */,
 				F04671A824E95F4000C6921D /* HexGridView.swift in Sources */,
 				F04671B724E9B89900C6921D /* Comp.swift in Sources */,
+				F0349CF124FA6E3F00406864 /* HexView.swift in Sources */,
 				F08C1D8F24EC4ACC00639315 /* BG.swift in Sources */,
 				F0AC622724E9BFD300572CE9 /* PreCompView.swift in Sources */,
 				F0C9369E24E9CBD2002B9742 /* CompSettingsView.swift in Sources */,
