@@ -10,7 +10,7 @@ import SwiftUI
 struct GridView: View {
     
     let yCount: Int
-    @Binding var grid: [Bool]
+    @Binding var grid: [Action]
     var hint: Bool = false
     var beOdd: Bool = true
     
@@ -41,7 +41,7 @@ struct GridView: View {
             }
             .onAppear {
                 guard geo.size.height > 0.0 else { return }
-                grid = [Bool](repeating: false, count: count(size: geo.size))
+                grid = [Action](repeating: Action(), count: count(size: geo.size))
             }
         }
     }
@@ -49,12 +49,11 @@ struct GridView: View {
     func isOn(at index: Int) -> Binding<Bool> {
         Binding<Bool> {
             guard index < grid.count else { return false }
-            return grid[index]
+            return grid[index].isOn
         } set: { on in
             guard index < grid.count else { return }
-            grid[index] = on
+            grid[index].isOn = on
         }
-
     }
     
     func xCount(size: CGSize) -> Int {

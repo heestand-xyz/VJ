@@ -55,8 +55,8 @@ class VideoJockey: ObservableObject {
     
     // MARK: - OSC
     
-    let oscIn: OSCIn
-    let oscOut: OSCOut
+//    let oscIn: OSCIn
+//    let oscOut: OSCOut
     
     // MARK: - Life Cycle
     
@@ -64,9 +64,9 @@ class VideoJockey: ObservableObject {
         
         // Global Blur
         
-        oscIn = OSCIn()
-        oscOut = OSCOut()
-        oscOut.send()
+//        oscIn = OSCIn()
+//        oscOut = OSCOut()
+//        oscOut.send()
         
         for compSpot in Comp.Spot.allCases {
             switch compSpot {

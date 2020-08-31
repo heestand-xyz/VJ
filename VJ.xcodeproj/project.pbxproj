@@ -31,12 +31,6 @@
 		F0642F8024EAE2A000693C7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A65E7C24E47B090090895D /* GridView.swift */; };
 		F07B98B424EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F07B98B524EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
-		F08C1D7B24EC3B2B00639315 /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = F08C1D7A24EC3B2B00639315 /* OSCKit */; };
-		F08C1D7D24EC3B3600639315 /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = F08C1D7C24EC3B3600639315 /* OSCKit */; };
-		F08C1D8124EC424000639315 /* OSCOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8024EC424000639315 /* OSCOut.swift */; };
-		F08C1D8224EC426600639315 /* OSCOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8024EC424000639315 /* OSCOut.swift */; };
-		F08C1D8524EC466400639315 /* OSCIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8424EC466400639315 /* OSCIn.swift */; };
-		F08C1D8624EC46AD00639315 /* OSCIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8424EC466400639315 /* OSCIn.swift */; };
 		F08C1D8824EC488000639315 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8724EC488000639315 /* TestPattern.swift */; };
 		F08C1D8924EC488000639315 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8724EC488000639315 /* TestPattern.swift */; };
 		F08C1D8E24EC4ACC00639315 /* BG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8D24EC4ACC00639315 /* BG.swift */; };
@@ -110,7 +104,6 @@
 				F04671A324E95F0400C6921D /* PolyKit in Frameworks */,
 				F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */,
 				F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */,
-				F08C1D7B24EC3B2B00639315 /* OSCKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +112,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */,
-				F08C1D7D24EC3B3600639315 /* OSCKit in Frameworks */,
 				F04671A524E95F0800C6921D /* PolyKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				F094B21624E4563300039BCD /* CircleView.swift */,
-				F04671A924E9606E00C6921D /* PolyView.swift */,
 				F0349CEF24FA6E3F00406864 /* HexView.swift */,
+				F04671A924E9606E00C6921D /* PolyView.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -320,7 +312,6 @@
 				F094B21124E451A500039BCD /* MultiplatformTypes */,
 				F0381E9724E823CA00EFEC06 /* AirKit */,
 				F04671A224E95F0400C6921D /* PolyKit */,
-				F08C1D7A24EC3B2B00639315 /* OSCKit */,
 			);
 			productName = "VJ (iOS)";
 			productReference = F094B1F324E44C8D00039BCD /* VJ.app */;
@@ -342,7 +333,6 @@
 			packageProductDependencies = (
 				F094B21424E451AC00039BCD /* MultiplatformTypes */,
 				F04671A424E95F0800C6921D /* PolyKit */,
-				F08C1D7C24EC3B3600639315 /* OSCKit */,
 			);
 			productName = "VJ (macOS)";
 			productReference = F094B1FB24E44C8D00039BCD /* VJ.app */;
@@ -376,7 +366,6 @@
 			mainGroup = F094B1E624E44C8B00039BCD;
 			packageReferences = (
 				F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */,
-				F08C1D7924EC3B2B00639315 /* XCRemoteSwiftPackageReference "OSCKit" */,
 			);
 			productRefGroup = F094B1F424E44C8D00039BCD /* Products */;
 			projectDirPath = "";
@@ -427,7 +416,6 @@
 				F0A65E7D24E47B090090895D /* GridView.swift in Sources */,
 				F0F9F08624EC6BE800DDCA14 /* StatusView.swift in Sources */,
 				F0F9F08D24EC725000DDCA14 /* Pad.swift in Sources */,
-				F08C1D8124EC424000639315 /* OSCOut.swift in Sources */,
 				F020523D24F000F8000FFE80 /* FinalView.swift in Sources */,
 				F08C1D9224EC4BBD00639315 /* Mono.swift in Sources */,
 				F04671B324E9B27400C6921D /* InputView.swift in Sources */,
@@ -436,7 +424,6 @@
 				F04671B024E9B23C00C6921D /* OutputView.swift in Sources */,
 				F04671B624E9B89900C6921D /* Comp.swift in Sources */,
 				F07B98B424EA977A00CF83A5 /* CornerSettingView.swift in Sources */,
-				F08C1D8524EC466400639315 /* OSCIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,13 +443,11 @@
 				F08C1D8F24EC4ACC00639315 /* BG.swift in Sources */,
 				F0AC622724E9BFD300572CE9 /* PreCompView.swift in Sources */,
 				F0C9369E24E9CBD2002B9742 /* CompSettingsView.swift in Sources */,
-				F08C1D8624EC46AD00639315 /* OSCIn.swift in Sources */,
 				F0F9F08724EC6BE800DDCA14 /* StatusView.swift in Sources */,
 				F0F9F08E24EC725000DDCA14 /* Pad.swift in Sources */,
 				F04671AB24E9606E00C6921D /* PolyView.swift in Sources */,
 				F020523E24F000F8000FFE80 /* FinalView.swift in Sources */,
 				F08C1D9324EC4BBD00639315 /* Mono.swift in Sources */,
-				F08C1D8224EC426600639315 /* OSCOut.swift in Sources */,
 				F094B20224E44C8D00039BCD /* ContentView.swift in Sources */,
 				F094B20024E44C8D00039BCD /* VJApp.swift in Sources */,
 				F04671B424E9B27400C6921D /* InputView.swift in Sources */,
@@ -712,14 +697,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F08C1D7924EC3B2B00639315 /* XCRemoteSwiftPackageReference "OSCKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sammysmallman/OSCKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.1;
-			};
-		};
 		F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hexagons/MultiplatformTypes.git";
@@ -742,16 +719,6 @@
 		F04671A424E95F0800C6921D /* PolyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PolyKit;
-		};
-		F08C1D7A24EC3B2B00639315 /* OSCKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F08C1D7924EC3B2B00639315 /* XCRemoteSwiftPackageReference "OSCKit" */;
-			productName = OSCKit;
-		};
-		F08C1D7C24EC3B3600639315 /* OSCKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F08C1D7924EC3B2B00639315 /* XCRemoteSwiftPackageReference "OSCKit" */;
-			productName = OSCKit;
 		};
 		F094B21124E451A500039BCD /* MultiplatformTypes */ = {
 			isa = XCSwiftPackageProductDependency;

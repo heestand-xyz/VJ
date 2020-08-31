@@ -47,7 +47,7 @@ struct ContentView: View {
                     } else {
                         Spacer()
                     }
-                    
+
                     // Settings
                     VStack {
                         SettingsView(vj: vj)

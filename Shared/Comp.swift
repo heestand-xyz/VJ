@@ -8,6 +8,11 @@
 import Foundation
 import CoreGraphics
 
+struct Action {
+    var isOn: Bool = false
+    var flow: CGFloat = 0.0
+}
+
 class Comp: ObservableObject {
     
     // Relative Corner Radius for Hexagons
@@ -53,7 +58,7 @@ class Comp: ObservableObject {
     }
     @Published var gridShape: GridShape
     
-    @Published var grids: [GridShape: [Int: [Bool]]] = [:]
+    @Published var grids: [GridShape: [Int: [Action]]] = [:]
     
     // MARK: - Life Cycle
     
@@ -66,7 +71,7 @@ class Comp: ObservableObject {
         self.corner = corner
         
         for gridShape in GridShape.allCases {
-            var subGrids: [Int: [Bool]] = [:]
+            var subGrids: [Int: [Action]] = [:]
             for v in 0...VideoJockey.vCountMax {
                 subGrids[v] = []
             }

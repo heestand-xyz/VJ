@@ -12,7 +12,7 @@ struct HexGridView: View {
     let yCount: Int
     @Binding var corner: CGFloat
     var asCircle: Bool = false
-    @Binding var grid: [Bool]
+    @Binding var grid: [Action]
     var hint: Bool = false
     var beOdd: Bool = true
     
@@ -31,6 +31,7 @@ struct HexGridView: View {
                                 HexView(hint: hint,
                                         asCircle: asCircle,
                                         isOn: isOn(at: i),
+                                        flow: flow(at: i),
                                         corner: $corner,
                                         length: length(size: geo.size),
                                         width: width(size: geo.size),
@@ -48,7 +49,7 @@ struct HexGridView: View {
             }
             .onAppear {
                 guard geo.size.height > 0.0 else { return }
-                grid = [Bool](repeating: false, count: count(size: geo.size))
+                grid = [Action](repeating: Action(), count: count(size: geo.size))
             }
         }
     }
@@ -74,12 +75,21 @@ struct HexGridView: View {
     func isOn(at index: Int) -> Binding<Bool> {
         Binding<Bool> {
             guard index < grid.count else { return false }
-            return grid[index]
+            return grid[index].isOn
         } set: { on in
             guard index < grid.count else { return }
-            grid[index] = on
+            grid[index].isOn = on
         }
-
+    }
+    
+    func flow(at index: Int) -> Binding<CGFloat> {
+        Binding<CGFloat> {
+            guard index < grid.count else { return 0.0 }
+            return grid[index].flow
+        } set: { flow in
+            guard index < grid.count else { return }
+            grid[index].flow = flow
+        }
     }
     
     func xCount(size: CGSize) -> Int {

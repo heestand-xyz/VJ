@@ -27,7 +27,7 @@ struct CompView: View {
                     case .squareCircles:
                         
                         GridView(yCount: 1 + v * 2,
-                                 grid: Binding<[Bool]>(get: {
+                                 grid: Binding<[Action]>(get: {
                                     comp.grids[.squareCircles]![v]!
                                  }, set: { values in
                                     comp.grids[.squareCircles]![v]! = values
@@ -37,7 +37,7 @@ struct CompView: View {
                         
                         HexGridView(yCount: 1 + v * 2,
                                     corner: $comp.corner,
-                                    grid: Binding<[Bool]>(get: {
+                                    grid: Binding<[Action]>(get: {
                                         comp.grids[.hexagons]![v]!
                                     }, set: { values in
                                         comp.grids[.hexagons]![v]! = values
@@ -48,7 +48,7 @@ struct CompView: View {
                         HexGridView(yCount: 1 + v * 2,
                                     corner: .constant(0.0),
                                     asCircle: true,
-                                    grid: Binding<[Bool]>(get: {
+                                    grid: Binding<[Action]>(get: {
                                         comp.grids[.hexagonsCircles]![v]!
                                     }, set: { values in
                                         comp.grids[.hexagonsCircles]![v]! = values

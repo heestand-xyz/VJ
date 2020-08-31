@@ -9,18 +9,20 @@ import SwiftUI
 
 struct HexView: View {
     
-    @State var drag: CGVector = .zero
-    var dragAmp: CGFloat = 0.01
-    
     let hint: Bool
     
     let asCircle: Bool
     
     @Binding var isOn: Bool
+    
+    @Binding var flow: CGFloat
+    var flowAmp: CGFloat = 0.01
+    
     @Binding var corner: CGFloat
-    var dragCorner: Binding<CGFloat> {
+    
+    var cornerFlow: Binding<CGFloat> {
         Binding<CGFloat> {
-            corner + drag.dy * dragAmp
+            corner + flow * flowAmp
         } set: { _ in }
     }
 
@@ -37,14 +39,16 @@ struct HexView: View {
                 CircleView(on: $isOn, hint: hint)
                     .blendMode(.difference)
             } else {
-                PolyView(count: 6, corner: dragCorner, on: $isOn, hint: hint)
+                PolyView(count: 6, corner: cornerFlow, on: $isOn, hint: hint)
             }
         }
             .frame(width: length,
                    height: length)
             .frame(width: width,
                    height: height)
-            .onInteract(on: $isOn, drag: $drag)
+        .onInteract(on: $isOn, drag: Binding<CGVector>(get: { .zero }, set: { vector in
+            flow = vector.dy
+        }))
             .offset(x: isOddRow ? width / 2 : 0.0)
             .opacity(!isOutside ? 1.0 : 0.0)
     }
