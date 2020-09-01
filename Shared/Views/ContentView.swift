@@ -10,6 +10,7 @@ import SwiftUI
 import AirKit
 #endif
 import MultiplatformTypes
+import Trails
 
 struct ContentView: View {
     
@@ -37,9 +38,11 @@ struct ContentView: View {
                             StatusView(vj: vj)
                             Spacer()
                         }
-                        OSCSettingsView(osc: OSC.main,
+                        OSCSettingsView(vj: vj,
+                                        osc: OSC.main,
                                         settings: Settings.main,
                                         connection: Connection.main)
+                        TrailsView(trailer: vj.trailer)
                         Spacer()
                     }
                     .frame(width: max(200, (geo.size.width - (geo.size.height * (16 / 9))) / 2))

@@ -45,6 +45,8 @@
 		F04671BB24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
 		F04671BC24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
 		F0642F8024EAE2A000693C7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A65E7C24E47B090090895D /* GridView.swift */; };
+		F07907C624FEB1270083EE9C /* Trails in Frameworks */ = {isa = PBXBuildFile; productRef = F07907C524FEB1270083EE9C /* Trails */; };
+		F07907C824FEB12F0083EE9C /* Trails in Frameworks */ = {isa = PBXBuildFile; productRef = F07907C724FEB12F0083EE9C /* Trails */; };
 		F07B98B424EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F07B98B524EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F08C1D8824EC488000639315 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8724EC488000639315 /* TestPattern.swift */; };
@@ -128,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07907C624FEB1270083EE9C /* Trails in Frameworks */,
 				F04671A324E95F0400C6921D /* PolyKit in Frameworks */,
 				F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */,
 				F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */,
+				F07907C824FEB12F0083EE9C /* Trails in Frameworks */,
 				F04671A524E95F0800C6921D /* PolyKit in Frameworks */,
 				CDF70AA4EFE316F3C8B585DA /* Pods_VJ__macOS_.framework in Frameworks */,
 			);
@@ -378,6 +382,7 @@
 				F094B21124E451A500039BCD /* MultiplatformTypes */,
 				F0381E9724E823CA00EFEC06 /* AirKit */,
 				F04671A224E95F0400C6921D /* PolyKit */,
+				F07907C524FEB1270083EE9C /* Trails */,
 			);
 			productName = "VJ (iOS)";
 			productReference = F094B1F324E44C8D00039BCD /* VJ.app */;
@@ -401,6 +406,7 @@
 			packageProductDependencies = (
 				F094B21424E451AC00039BCD /* MultiplatformTypes */,
 				F04671A424E95F0800C6921D /* PolyKit */,
+				F07907C724FEB12F0083EE9C /* Trails */,
 			);
 			productName = "VJ (macOS)";
 			productReference = F094B1FB24E44C8D00039BCD /* VJ.app */;
@@ -434,6 +440,7 @@
 			mainGroup = F094B1E624E44C8B00039BCD;
 			packageReferences = (
 				F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */,
+				F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */,
 			);
 			productRefGroup = F094B1F424E44C8D00039BCD /* Products */;
 			projectDirPath = "";
@@ -868,6 +875,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hexagons/Trails.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
 		F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hexagons/MultiplatformTypes.git";
@@ -890,6 +905,16 @@
 		F04671A424E95F0800C6921D /* PolyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PolyKit;
+		};
+		F07907C524FEB1270083EE9C /* Trails */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */;
+			productName = Trails;
+		};
+		F07907C724FEB12F0083EE9C /* Trails */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */;
+			productName = Trails;
 		};
 		F094B21124E451A500039BCD /* MultiplatformTypes */ = {
 			isa = XCSwiftPackageProductDependency;

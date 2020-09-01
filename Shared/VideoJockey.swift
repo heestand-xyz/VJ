@@ -17,9 +17,22 @@ import SwiftUI
 import AppKit
 #endif
 import MultiplatformTypes
+import Trails
 
 class VideoJockey: ObservableObject {
     
+    // MARK: - OSC
+    
+    let trailer: Trailer
+    
+    @Published var oscAddress: String?
+    @Published var oscValue: CGFloat? {
+        didSet {
+            trailer.add(Double(oscValue ?? -1), at: 0)
+        }
+    }
+//    @Published var oscValueAsString: String?
+
     // MARK: - Settings
     
     @Published var opacity: Double = 1.0
@@ -61,6 +74,8 @@ class VideoJockey: ObservableObject {
     // MARK: - Life Cycle
     
     init() {
+        
+        trailer = Trailer(count: 1, duration: 1.0)
         
         Connection.main.monitor()
         Connection.main.check()
@@ -107,6 +122,9 @@ class VideoJockey: ObservableObject {
     @objc func appWillEnterForeground() {
         Connection.main.monitor()
         Connection.main.check()
+        oscAddress = nil
+        oscValue = nil
+//        oscValueAsString = nil
     }
     
     // MARK: - Present
@@ -129,6 +147,18 @@ class VideoJockey: ObservableObject {
     
     func gotOSC(_ address: String, _ value: Any) {
         print("OSC at \"\(address)\":", value)
+        guard address == "beats" else { return }
+        oscAddress = address
+        if let val: Int = value as? Int {
+            oscValue = CGFloat(val) / 127
+        } else if let val: CGFloat = value as? CGFloat {
+            oscValue = val
+        } else if let val: [CGFloat] = value as? [CGFloat] {
+            oscValue = val.first
+        } else {
+            oscValue = nil
+        }
+//        oscValueAsString = String(describing: value)
     }
     
 }
