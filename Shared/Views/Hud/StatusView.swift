@@ -49,6 +49,7 @@ struct StatusView: View {
 
 struct StatusView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusView(vj: VideoJockey())
+        let vj = VideoJockey()
+        return StatusView(vj: vj)
     }
 }

@@ -62,6 +62,12 @@ class VideoJockey: ObservableObject {
     
     init() {
         
+        Connection.main.monitor()
+        Connection.main.check()
+        
+        OSC.main.startListen()
+        OSC.main.messageCallback = gotOSC
+        
         // Global Blur
         
 //        oscIn = OSCIn()
@@ -93,8 +99,17 @@ class VideoJockey: ObservableObject {
             self.present()
         }
         #endif
-        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIScene.willEnterForegroundNotification, object: nil)
+
     }
+    
+    @objc func appWillEnterForeground() {
+        Connection.main.monitor()
+        Connection.main.check()
+    }
+    
+    // MARK: - Present
     
     #if os(macOS)
     func present() {
@@ -109,5 +124,11 @@ class VideoJockey: ObservableObject {
         window.makeKeyAndOrderFront(nil)
     }
     #endif
+    
+    // MARK: - OSC
+    
+    func gotOSC(_ address: String, _ value: Any) {
+        print("OSC at \"\(address)\":", value)
+    }
     
 }

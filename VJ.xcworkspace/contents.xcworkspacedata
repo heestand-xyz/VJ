@@ -13,4 +13,10 @@
    <FileRef
       location = "group:../../../Packages/Swift/PolyKit">
    </FileRef>
+   <FileRef
+      location = "group:VJ.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

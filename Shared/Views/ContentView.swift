@@ -21,6 +21,12 @@ struct ContentView: View {
         
         VStack {
             
+            OSCInfoView(osc: OSC.main,
+                        settings: Settings.main,
+                        connection: Connection.main)
+                .frame(maxWidth: 500)
+                .offset(y: 5)
+            
             GeometryReader { geo in
                     
                 HStack(spacing: 0.0) {
@@ -31,9 +37,12 @@ struct ContentView: View {
                             StatusView(vj: vj)
                             Spacer()
                         }
+                        OSCSettingsView(osc: OSC.main,
+                                        settings: Settings.main,
+                                        connection: Connection.main)
                         Spacer()
                     }
-                    .frame(width: (geo.size.width - (geo.size.height * (16 / 9))) / 2)
+                    .frame(width: max(200, (geo.size.width - (geo.size.height * (16 / 9))) / 2))
                     
                     // Preview of Final Output
                     if vj.preview {
@@ -53,7 +62,7 @@ struct ContentView: View {
                         SettingsView(vj: vj)
                         Spacer()
                     }
-                    .frame(width: (geo.size.width - (geo.size.height * (16 / 9))) / 2)
+                    .frame(width: max(200, (geo.size.width - (geo.size.height * (16 / 9))) / 2))
                     
                 }
                 
@@ -65,6 +74,7 @@ struct ContentView: View {
             InputView(vj: vj)
             
         }
+        .ignoresSafeArea(edges: .top)
 
     }
     

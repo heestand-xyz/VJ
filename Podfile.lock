@@ -1,0 +1,20 @@
+PODS:
+  - CocoaAsyncSocket (7.6.4)
+  - OSCKit (0.3.5):
+    - CocoaAsyncSocket (~> 7.3)
+
+DEPENDENCIES:
+  - OSCKit
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+    - OSCKit
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  OSCKit: 4470dbd30bc792dcf66dc4e7b5d1ec7174add33c
+
+PODFILE CHECKSUM: 7af183febf1ba650c4fb77e79b6e9713028657e0
+
+COCOAPODS: 1.9.3
