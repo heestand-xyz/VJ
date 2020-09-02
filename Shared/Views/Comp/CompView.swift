@@ -65,8 +65,7 @@ struct CompView: View {
             }
         
         }
-        .aspectRatio(VideoJockey.aspectRatio, contentMode: .fit)
-        .border(vj.showBorder ? Color.primary : Color.clear)
+        .aspectRatio(vj.aspectRatio, contentMode: .fit)
         .clipped()
         
     }

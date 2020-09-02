@@ -20,7 +20,7 @@ struct PolyView: View {
                 .foregroundColor(onVJ && onDJ ? .white : .clear)
             if hint || onVJ {
                 Poly(count: count, relativeCornerRadius: corner)
-                    .stroke()
+                    .stroke(lineWidth: hint && onVJ ? 2.0 : 1.0)
                     .foregroundColor(.white)
             }
         }

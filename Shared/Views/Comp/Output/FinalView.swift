@@ -19,32 +19,37 @@ struct FinalView: View {
     
     var body: some View {
         
-        ZStack {
+        GeometryReader { geo in
             
-            Color.black
-            
-            Group {
+            ZStack {
                 
-                ZStack {
-                    Color.red
-                    output
+                Color.black
+                
+                Group {
+                    
+                    ZStack {
+                        Color(hue: 0.0, saturation: 1.0, brightness: 1.0)
+                        output
+                    }
+                    .offset(x: -vj.colorShift)
+                    
+                    ZStack {
+                        Color(hue: 1.0 / 3.0, saturation: 1.0, brightness: 1.0)
+                        output
+                    }
+                    
+                    ZStack {
+                        Color(hue: 2.0 / 3.0, saturation: 1.0, brightness: 1.0)
+                        output
+                    }
+                    .offset(x: vj.colorShift)
+                    
                 }
-                .offset(x: -vj.colorShift)
-                
-                ZStack {
-                    Color.green
-                    output
-                }
-                
-                ZStack {
-                    Color.blue
-                    output
-                }
-                .offset(x: vj.colorShift)
-                
+                .aspectRatio(vj.aspectRatio, contentMode: .fit)
+                .padding(vj.padding * geo.size.height)
+                .compositingGroup()
+                .blendMode(.screen)
             }
-            .compositingGroup()
-            .blendMode(.plusLighter)
             
         }
         

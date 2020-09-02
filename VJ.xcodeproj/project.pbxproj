@@ -290,9 +290,8 @@
 		F094B21924E4568100039BCD /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				F094B21624E4563300039BCD /* CircleView.swift */,
 				F0349CEF24FA6E3F00406864 /* HexView.swift */,
-				F04671A924E9606E00C6921D /* PolyView.swift */,
+				F0F9E3C0250023F200F44B39 /* Geometry */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -345,6 +344,15 @@
 				F08C1D9024EC4BAC00639315 /* Style */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F0F9E3C0250023F200F44B39 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				F094B21624E4563300039BCD /* CircleView.swift */,
+				F04671A924E9606E00C6921D /* PolyView.swift */,
+			);
+			path = Geometry;
 			sourceTree = "<group>";
 		};
 		F0F9F08824EC6FAC00DDCA14 /* Ramps */ = {

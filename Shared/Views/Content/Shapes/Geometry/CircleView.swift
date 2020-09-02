@@ -17,7 +17,7 @@ struct CircleView: View {
                 .foregroundColor(onVJ && onDJ ? .white : .clear)
             if hint || onVJ {
                 Circle()
-                    .strokeBorder()
+                    .strokeBorder(lineWidth: hint && onVJ ? 2.0 : 1.0)
                     .foregroundColor(.white)
             }
         }

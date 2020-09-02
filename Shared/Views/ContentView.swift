@@ -28,6 +28,8 @@ struct ContentView: View {
                 .frame(maxWidth: 500)
                 .offset(y: 5)
             
+            Divider()
+            
             GeometryReader { geo in
                     
                 HStack(spacing: 0.0) {
@@ -45,27 +47,39 @@ struct ContentView: View {
                         TrailsView(trailer: vj.trailer)
                         Spacer()
                     }
-                    .frame(width: max(200, (geo.size.width - (geo.size.height * VideoJockey.aspectRatio)) / 2))
+                    .frame(width: 350)
+//                    .frame(width: max(300, (geo.size.width - (geo.size.height * vj.aspectRatio)) / 2))
                     
-                    // Preview of Final Output
+                    Divider()
+                    Spacer()
+                    Divider()
+
+                    // Final Preview
                     if vj.preview {
+                        
                         ZStack {
                             FinalView(vj: vj)
                             InteractView { interacted in
                                 vj.flash = interacted
                             }
                         }
-                        .border(vj.showBorder ? Color.primary : Color.clear)
+                        .aspectRatio(vj.aspectRatio, contentMode: .fit)
+                        
                     } else {
                         Spacer()
                     }
+                    
+                    Divider()
+                    Spacer()
+                    Divider()
 
                     // Settings
                     VStack {
                         SettingsView(vj: vj)
                         Spacer()
                     }
-                    .frame(width: max(200, (geo.size.width - (geo.size.height * VideoJockey.aspectRatio)) / 2))
+                    .frame(width: 350)
+//                    .frame(width: max(300, (geo.size.width - (geo.size.height * vj.aspectRatio)) / 2))
                     
                 }
                 
@@ -75,6 +89,7 @@ struct ContentView: View {
             
             // Input Content
             InputView(vj: vj)
+                .frame(height: 600)
             
         }
         .ignoresSafeArea(edges: .top)

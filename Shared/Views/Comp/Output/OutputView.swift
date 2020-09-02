@@ -53,7 +53,7 @@ struct OutputView: View {
             .opacity(vj.opacity)
             
         }
-        .aspectRatio(VideoJockey.aspectRatio, contentMode: .fit)
+        .aspectRatio(vj.aspectRatio, contentMode: .fit)
         .clipped()
         
     }

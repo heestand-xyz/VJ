@@ -25,26 +25,39 @@ class VideoJockey: ObservableObject {
     
     let trailer: Trailer
     
+    // Beats
     @Published var audioBeats: CGFloat = 0.0 {
         didSet {
             trailer.add(Double(audioBeats), at: 0)
+            
             onDJ = audioBeats > 0.0
+            
         }
     }
+    
+    // Bass
     @Published var audioBass: CGFloat = 0.0 {
         didSet {
             trailer.add(Double(audioBass), at: 1)
+            
         }
     }
+    
+    // Chords
     @Published var audioChords: CGFloat = 0.0 {
         didSet {
             trailer.add(Double(audioChords), at: 2)
-            colorShift = audioChords * 10
+            
+            colorShift = audioChords * 7.0
+            
         }
     }
+    
+    // Melody
     @Published var audioMelody: CGFloat = 0.0 {
         didSet {
             trailer.add(Double(audioMelody), at: 3)
+            
         }
     }
     
@@ -62,8 +75,6 @@ class VideoJockey: ObservableObject {
     @Published var tag: Bool = false
 
     @Published var colorShift: CGFloat = 0.0
-    
-    let showBorder: Bool = false
     
     // MARK: - Comps
     
@@ -89,13 +100,17 @@ class VideoJockey: ObservableObject {
 //    let oscIn: OSCIn
 //    let oscOut: OSCOut
     
-    static let aspectRatio: CGFloat = 16 / 10 // 4 / 3
+    @Published(key: "aspectRatio") var aspectRatio: CGFloat = 16 / 9 // 4 / 3
+    
+    @Published(key: "padding") var padding: CGFloat = 0.0
     
     // MARK: - Life Cycle
     
     init() {
         
-        trailer = Trailer(count: 4, duration: 1.0)
+        trailer = Trailer(count: 4, duration: 3.0)
+        trailer.fixedMin = 0.0
+        trailer.fixedMax = 1.0
         
         Connection.main.monitor()
         Connection.main.check()
@@ -125,7 +140,7 @@ class VideoJockey: ObservableObject {
         }
         
         #if canImport(AirKit)
-        Air.play(AnyView(ZStack { Color.black; FinalView(vj: self) } ))
+        Air.play(AnyView(FinalView(vj: self)))
         Air.connection { connected in
             self.isAirPlaying = connected
         }

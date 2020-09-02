@@ -40,13 +40,7 @@ struct SettingsView: View {
             .font(.system(size: 30))
             .bg()
             
-            HStack {
-                
-                Pad(on: $vj.test, title: "Test", systemImage: "diamond")
-                    .frame(width: 100, height: 100)
-                
-                Pad(on: $vj.tag, title: "TAG")
-                    .frame(width: 100, height: 100)
+            HStack(alignment: .top, spacing: 20) {
                 
                 VStack {
                     BasicToggle(isOn: $vj.preview)
@@ -55,7 +49,38 @@ struct SettingsView: View {
                 }
                 .bg()
                 
+                Picker("", selection: $vj.aspectRatio) {
+                    Text("16 / 9")
+                        .tag(CGFloat(16.0 / 9.0))
+                    Text("16 / 10")
+                        .tag(CGFloat(16.0 / 10.0))
+                    Text("4 / 3")
+                        .tag(CGFloat(4.0 / 3.0))
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                
+                Spacer()
+                
             }
+            
+            HStack(alignment: .top, spacing: 20) {
+                
+                Pad(on: $vj.test, title: "Test", systemImage: "diamond")
+                    .frame(width: 100, height: 100)
+                
+                Pad(on: $vj.tag, title: "TAG")
+                    .frame(width: 100, height: 100)
+                
+                Spacer()
+                
+            }
+            
+            HStack(spacing: 15) {
+                Text("Padding")
+                Slider(value: $vj.padding, in: 0.0...0.1)
+            }
+            .mono()
+            .bg()
             
         }
         .padding(.horizontal)

@@ -19,4 +19,7 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../../../Packages/Swift/Trails">
+   </FileRef>
 </Workspace>

@@ -23,7 +23,6 @@ struct Pad: View {
             
             RoundedRectangle(cornerRadius: 15)
                 .opacity(on ? 1.0 : 0.2)
-                .onInteract(on: $on)
             
             Group {
                 if let title: String = title,
@@ -42,6 +41,7 @@ struct Pad: View {
             .padding()
             
         }
+        .onInteract(on: $on)
         
     }
     
