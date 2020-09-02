@@ -58,7 +58,7 @@ struct TestPattern_Previews: PreviewProvider {
             Color.black
                 .ignoresSafeArea()
             TestPattern()
-                .aspectRatio(16 / 9, contentMode: .fit)
+                .aspectRatio(VideoJockey.aspectRatio, contentMode: .fit)
         }
     }
 }

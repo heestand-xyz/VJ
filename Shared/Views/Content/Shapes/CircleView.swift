@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct CircleView: View {
-    @Binding var on: Bool
+    @Binding var onVJ: Bool
+    @Binding var onDJ: Bool
     var hint: Bool
     var body: some View {
         ZStack {
             Circle()
-                .foregroundColor(on ? .white : .clear)
-            if hint {
+                .foregroundColor(onVJ && onDJ ? .white : .clear)
+            if hint || onVJ {
                 Circle()
                     .strokeBorder()
                     .foregroundColor(.white)
@@ -25,6 +26,6 @@ struct CircleView: View {
 
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleView(on: .constant(true), hint: true)
+        CircleView(onVJ: .constant(true), onDJ: .constant(true), hint: true)
     }
 }

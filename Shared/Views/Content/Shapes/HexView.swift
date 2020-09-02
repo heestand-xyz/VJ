@@ -13,7 +13,8 @@ struct HexView: View {
     
     let asCircle: Bool
     
-    @Binding var isOn: Bool
+    @Binding var onVJ: Bool
+    @Binding var onDJ: Bool
     
     @Binding var flow: CGFloat
     var flowAmp: CGFloat = 0.01
@@ -36,17 +37,17 @@ struct HexView: View {
     var body: some View {
         Group {
             if asCircle {
-                CircleView(on: $isOn, hint: hint)
+                CircleView(onVJ: $onVJ, onDJ: $onDJ, hint: hint)
                     .blendMode(.difference)
             } else {
-                PolyView(count: 6, corner: cornerFlow, on: $isOn, hint: hint)
+                PolyView(count: 6, corner: cornerFlow, onVJ: $onVJ, onDJ: $onDJ, hint: hint)
             }
         }
             .frame(width: length,
                    height: length)
             .frame(width: width,
                    height: height)
-        .onInteract(on: $isOn, drag: Binding<CGVector>(get: { .zero }, set: { vector in
+        .onInteract(on: $onVJ, drag: Binding<CGVector>(get: { .zero }, set: { vector in
             flow = vector.dy
         }))
             .offset(x: isOddRow ? width / 2 : 0.0)

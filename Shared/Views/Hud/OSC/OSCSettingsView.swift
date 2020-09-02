@@ -42,14 +42,22 @@ struct OSCSettingsView: View {
             }
             
             VStack {
-                Text(vj.oscAddress ?? "No OSC")
-//                Text(vj.oscValueAsString ?? "No Value")
-                Slider(value: Binding<CGFloat>(get: {
-                    vj.oscValue ?? 0.0
-                }, set: { value in
-                    vj.oscValue = value
-                }))
-                    .disabled(vj.oscValue == nil)
+                HStack {
+                    Text("Beats")
+                    Slider(value: $vj.audioBeats)
+                }
+                HStack {
+                    Text("Bass")
+                    Slider(value: $vj.audioBass)
+                }
+                HStack {
+                    Text("Chords")
+                    Slider(value: $vj.audioChords)
+                }
+                HStack {
+                    Text("Melody")
+                    Slider(value: $vj.audioMelody)
+                }
             }
             .padding()
             

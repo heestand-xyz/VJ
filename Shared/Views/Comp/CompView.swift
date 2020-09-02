@@ -31,7 +31,8 @@ struct CompView: View {
                                     comp.grids[.squareCircles]![v]!
                                  }, set: { values in
                                     comp.grids[.squareCircles]![v]! = values
-                                 }), hint: hint)
+                                 }), hint: hint,
+                                 onDJ: $vj.onDJ)
                         
                     case .hexagons:
                         
@@ -41,7 +42,8 @@ struct CompView: View {
                                         comp.grids[.hexagons]![v]!
                                     }, set: { values in
                                         comp.grids[.hexagons]![v]! = values
-                                    }), hint: hint)
+                                    }), hint: hint,
+                                    onDJ: $vj.onDJ)
                         
                     case .hexagonsCircles:
                         
@@ -52,7 +54,8 @@ struct CompView: View {
                                         comp.grids[.hexagonsCircles]![v]!
                                     }, set: { values in
                                         comp.grids[.hexagonsCircles]![v]! = values
-                                    }), hint: hint)
+                                    }), hint: hint,
+                                    onDJ: $vj.onDJ)
                         
                     }
                     
@@ -62,7 +65,7 @@ struct CompView: View {
             }
         
         }
-        .aspectRatio(16 / 9, contentMode: .fit)
+        .aspectRatio(VideoJockey.aspectRatio, contentMode: .fit)
         .border(vj.showBorder ? Color.primary : Color.clear)
         .clipped()
         

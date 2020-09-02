@@ -45,7 +45,7 @@ struct ContentView: View {
                         TrailsView(trailer: vj.trailer)
                         Spacer()
                     }
-                    .frame(width: max(200, (geo.size.width - (geo.size.height * (16 / 9))) / 2))
+                    .frame(width: max(200, (geo.size.width - (geo.size.height * VideoJockey.aspectRatio)) / 2))
                     
                     // Preview of Final Output
                     if vj.preview {
@@ -65,7 +65,7 @@ struct ContentView: View {
                         SettingsView(vj: vj)
                         Spacer()
                     }
-                    .frame(width: max(200, (geo.size.width - (geo.size.height * (16 / 9))) / 2))
+                    .frame(width: max(200, (geo.size.width - (geo.size.height * VideoJockey.aspectRatio)) / 2))
                     
                 }
                 

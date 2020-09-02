@@ -16,6 +16,8 @@ struct HexGridView: View {
     var hint: Bool = false
     var beOdd: Bool = true
     
+    @Binding var onDJ: Bool
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -30,7 +32,8 @@ struct HexGridView: View {
 
                                 HexView(hint: hint,
                                         asCircle: asCircle,
-                                        isOn: isOn(at: i),
+                                        onVJ: isOn(at: i),
+                                        onDJ: $onDJ,
                                         flow: flow(at: i),
                                         corner: $corner,
                                         length: length(size: geo.size),
@@ -128,6 +131,6 @@ struct HexGridView: View {
 
 struct HexGridView_Previews: PreviewProvider {
     static var previews: some View {
-        HexGridView(yCount: 3, corner: .constant(0.0), grid: .constant([]), hint: true)
+        HexGridView(yCount: 3, corner: .constant(0.0), grid: .constant([]), hint: true, onDJ: .constant(true))
     }
 }

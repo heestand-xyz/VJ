@@ -25,13 +25,30 @@ class VideoJockey: ObservableObject {
     
     let trailer: Trailer
     
-    @Published var oscAddress: String?
-    @Published var oscValue: CGFloat? {
+    @Published var audioBeats: CGFloat = 0.0 {
         didSet {
-            trailer.add(Double(oscValue ?? -1), at: 0)
+            trailer.add(Double(audioBeats), at: 0)
+            onDJ = audioBeats > 0.0
         }
     }
-//    @Published var oscValueAsString: String?
+    @Published var audioBass: CGFloat = 0.0 {
+        didSet {
+            trailer.add(Double(audioBass), at: 1)
+        }
+    }
+    @Published var audioChords: CGFloat = 0.0 {
+        didSet {
+            trailer.add(Double(audioChords), at: 2)
+            colorShift = audioChords * 10
+        }
+    }
+    @Published var audioMelody: CGFloat = 0.0 {
+        didSet {
+            trailer.add(Double(audioMelody), at: 3)
+        }
+    }
+    
+    @Published var onDJ: Bool = false
 
     // MARK: - Settings
     
@@ -43,7 +60,7 @@ class VideoJockey: ObservableObject {
     
     @Published var test: Bool = false
     
-    @Published var colorShift: CGFloat = 1.0
+    @Published var colorShift: CGFloat = 0.0
     
     let showBorder: Bool = false
     
@@ -71,11 +88,13 @@ class VideoJockey: ObservableObject {
 //    let oscIn: OSCIn
 //    let oscOut: OSCOut
     
+    static let aspectRatio: CGFloat = 4 / 3
+    
     // MARK: - Life Cycle
     
     init() {
         
-        trailer = Trailer(count: 1, duration: 1.0)
+        trailer = Trailer(count: 4, duration: 1.0)
         
         Connection.main.monitor()
         Connection.main.check()
@@ -103,7 +122,7 @@ class VideoJockey: ObservableObject {
         }
         
         #if canImport(AirKit)
-        Air.play(AnyView(FinalView(vj: self)))
+        Air.play(AnyView(ZStack { Color.black; FinalView(vj: self) } ))
         Air.connection { connected in
             self.isAirPlaying = connected
         }
@@ -122,9 +141,10 @@ class VideoJockey: ObservableObject {
     @objc func appWillEnterForeground() {
         Connection.main.monitor()
         Connection.main.check()
-        oscAddress = nil
-        oscValue = nil
-//        oscValueAsString = nil
+        audioBeats = 0.0
+        audioBass = 0.0
+        audioChords = 0.0
+        audioMelody = 0.0
     }
     
     // MARK: - Present
@@ -147,18 +167,29 @@ class VideoJockey: ObservableObject {
     
     func gotOSC(_ address: String, _ value: Any) {
         print("OSC at \"\(address)\":", value)
-        guard address == "beats" else { return }
-        oscAddress = address
-        if let val: Int = value as? Int {
-            oscValue = CGFloat(val) / 127
-        } else if let val: CGFloat = value as? CGFloat {
-            oscValue = val
-        } else if let val: [CGFloat] = value as? [CGFloat] {
-            oscValue = val.first
-        } else {
-            oscValue = nil
+        func val() -> CGFloat {
+            if let val: Int = value as? Int {
+                return CGFloat(val) / 127
+            } else if let val: CGFloat = value as? CGFloat {
+                return val
+            } else if let val: [CGFloat] = value as? [CGFloat] {
+                return val.first ?? 0.0
+            } else {
+                return 0.0
+            }
         }
-//        oscValueAsString = String(describing: value)
+        switch address {
+        case "beats":
+            audioBeats = val()
+        case "bass":
+            audioBass = val()
+        case "chords":
+            audioChords = val()
+        case "melody":
+            audioMelody = val()
+        default:
+            break
+        }
     }
     
 }

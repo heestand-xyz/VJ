@@ -14,6 +14,8 @@ struct GridView: View {
     var hint: Bool = false
     var beOdd: Bool = true
     
+    @Binding var onDJ: Bool
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -26,7 +28,7 @@ struct GridView: View {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < grid.count {
                                 
-                                CircleView(on: isOn(at: i), hint: hint)
+                                CircleView(onVJ: isOn(at: i), onDJ: $onDJ, hint: hint)
                                     .onInteract(on: isOn(at: i))
                                     .frame(width: length(size: geo.size),
                                            height: length(size: geo.size))
@@ -76,6 +78,6 @@ struct GridView: View {
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        GridView(yCount: 3, grid: .constant([]), hint: true)
+        GridView(yCount: 3, grid: .constant([]), hint: true, onDJ: .constant(true))
     }
 }
