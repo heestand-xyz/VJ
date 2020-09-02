@@ -36,10 +36,18 @@ struct OutputView: View {
                         .blendMode(.difference)
                 }
                 
+                // Test
                 if vj.test {
                     TestPattern()
                         .blendMode(.difference)
                 }
+                
+                // Tag
+                if vj.tag {
+                    TagView()
+                        .blendMode(.difference)
+                }
+
                 
             }
             .opacity(vj.opacity)

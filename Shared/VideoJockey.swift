@@ -59,7 +59,8 @@ class VideoJockey: ObservableObject {
     @Published var preview: Bool = true
     
     @Published var test: Bool = false
-    
+    @Published var tag: Bool = false
+
     @Published var colorShift: CGFloat = 0.0
     
     let showBorder: Bool = false
@@ -88,7 +89,7 @@ class VideoJockey: ObservableObject {
 //    let oscIn: OSCIn
 //    let oscOut: OSCOut
     
-    static let aspectRatio: CGFloat = 4 / 3
+    static let aspectRatio: CGFloat = 16 / 10 // 4 / 3
     
     // MARK: - Life Cycle
     
@@ -113,11 +114,13 @@ class VideoJockey: ObservableObject {
             case .topLeft:
                 comps[compSpot] = Comp(vCount: 1, gridShape: .hexagons, corner: 0.0)
             case .topRight:
-                comps[compSpot] = Comp(vCount: 1, gridShape: .hexagons, corner: 1.0)
+//                comps[compSpot] = Comp(vCount: 1, gridShape: .hexagons, corner: 1.0)
+                comps[compSpot] = Comp(vCount: 1, gridShape: .hexagonsCircles)
             case .bottomLeft:
                 comps[compSpot] = Comp(vCount: 0, gridShape: .hexagons, corner: 0.0)
             case .bottomRight:
-                comps[compSpot] = Comp(vCount: 0, gridShape: .hexagons, corner: 1.0)
+//                comps[compSpot] = Comp(vCount: 0, gridShape: .hexagons, corner: 1.0)
+                comps[compSpot] = Comp(vCount: 0, gridShape: .hexagonsCircles)
             }
         }
         

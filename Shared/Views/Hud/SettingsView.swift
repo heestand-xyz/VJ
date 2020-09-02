@@ -45,6 +45,9 @@ struct SettingsView: View {
                 Pad(on: $vj.test, title: "Test", systemImage: "diamond")
                     .frame(width: 100, height: 100)
                 
+                Pad(on: $vj.tag, title: "TAG")
+                    .frame(width: 100, height: 100)
+                
                 VStack {
                     BasicToggle(isOn: $vj.preview)
                     Label("View", systemImage: "rectangle.dashed")
