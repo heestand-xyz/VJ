@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Trails",
+        "repositoryURL": "https://github.com/hexagons/Trails.git",
+        "state": {
+          "branch": null,
+          "revision": "37ebd1bd84fb7e04847366359af739e49d3b3399",
+          "version": "1.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

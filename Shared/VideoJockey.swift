@@ -109,6 +109,9 @@ class VideoJockey: ObservableObject {
     init() {
         
         trailer = Trailer(count: 4, duration: 3.0)
+        trailer.circlesActive = true
+        trailer.circleBorder = false
+        trailer.circleRadius = 2
         trailer.fixedMin = 0.0
         trailer.fixedMax = 1.0
         
