@@ -50,7 +50,7 @@ class VideoJockey: ObservableObject {
         didSet {
             trailer.add(Double(audioChords), at: 2)
             
-            colorShift = audioChords * 7.0
+            colorShift = audioChords
             
         }
     }
@@ -59,6 +59,8 @@ class VideoJockey: ObservableObject {
     @Published var audioMelody: CGFloat = 0.0 {
         didSet {
             trailer.add(Double(audioMelody), at: 3)
+            
+            colorWheel = audioMelody
             
         }
     }
@@ -77,7 +79,8 @@ class VideoJockey: ObservableObject {
     @Published var tag: Bool = false
 
     @Published var colorShift: CGFloat = 0.0
-    
+    @Published var colorWheel: CGFloat = 0.0
+
     // MARK: - Comps
     
     var comps: [Comp.Spot: Comp] = [:]
