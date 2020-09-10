@@ -30,7 +30,7 @@ class VideoJockey: ObservableObject {
         didSet {
             trailer.add(Double(audioBeats), at: 0)
             
-            onDJ = audioBeats > 0.0
+            onDJ = audioBeats > 1.0 / 3.0
             
         }
     }
@@ -60,7 +60,7 @@ class VideoJockey: ObservableObject {
         didSet {
             trailer.add(Double(audioMelody), at: 3)
             
-            colorWheel = Double(audioMelody)
+            colorShift = audioMelody
             
         }
     }
@@ -117,9 +117,9 @@ class VideoJockey: ObservableObject {
     init() {
         
         trailer = Trailer(count: 4, duration: 3.0)
-        trailer.circlesActive = true
-        trailer.circleBorder = false
-        trailer.circleRadius = 2
+//        trailer.circlesActive = true
+//        trailer.circleBorder = false
+//        trailer.circleRadius = 2
         trailer.fixedMin = 0.0
         trailer.fixedMax = 1.0
         
