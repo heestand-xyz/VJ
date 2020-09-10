@@ -108,9 +108,9 @@ class VideoJockey: ObservableObject {
 //    let oscIn: OSCIn
 //    let oscOut: OSCOut
     
-    @Published(key: "aspectRatio") var aspectRatio: CGFloat = 16 / 9 // 4 / 3
+    @Published var aspectRatio: CGFloat = 16 / 10
     
-    @Published(key: "padding") var padding: CGFloat = 0.0
+    @Published var padding: CGFloat = 0.0
     
     // MARK: - Life Cycle
     
