@@ -46,7 +46,7 @@ struct TagView: View {
                 }
                 Spacer()
             }
-            .font(.system(size: geo.size.height * 0.02, weight: .thin, design: .monospaced))
+            .font(.system(size: geo.size.height * 0.03, weight: .thin, design: .monospaced))
             
         }
         .aspectRatio(1.0, contentMode: .fit)

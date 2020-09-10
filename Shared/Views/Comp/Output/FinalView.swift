@@ -28,18 +28,18 @@ struct FinalView: View {
                 Group {
                     
                     ZStack {
-                        Color(hue: 0.0 + vj.colorWheel * (1.0 / 3.0), saturation: 1.0, brightness: 1.0)
+                        Color(hue: vj.colorWheel, saturation: 1.0, brightness: 1.0)
                         output
                     }
                     .offset(x: -vj.colorShift * geo.size.height * 0.01)
                     
                     ZStack {
-                        Color(hue: 1.0 / 3.0 + vj.colorWheel * (1.0 / 3.0), saturation: 1.0, brightness: 1.0)
+                        Color(hue: (1.0 / 3.0 + vj.colorWheel).truncatingRemainder(dividingBy: 1.0), saturation: 1.0, brightness: 1.0)
                         output
                     }
                     
                     ZStack {
-                        Color(hue: 2.0 / 3.0 + vj.colorWheel * (1.0 / 3.0), saturation: 1.0, brightness: 1.0)
+                        Color(hue: (2.0 / 3.0 + vj.colorWheel).truncatingRemainder(dividingBy: 1.0), saturation: 1.0, brightness: 1.0)
                         output
                     }
                     .offset(x: vj.colorShift * geo.size.height * 0.01)
