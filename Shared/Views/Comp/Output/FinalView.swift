@@ -50,10 +50,34 @@ struct FinalView: View {
                 .compositingGroup()
                 .blendMode(.screen)
             }
+            .compositingGroup()
+            .blur(radius: vj.blur * geo.size.height * 0.01)
             
         }
         
     }
+    
+//    var body: some View {
+//
+//        GeometryReader { geo in
+//
+//            ZStack {
+//
+//                Color.black
+//
+//                colorShifted
+//                    .compositingGroup()
+//                    .blur(radius: vj.blur * geo.size.height * 0.01)
+////                    .opacity(0.5)
+//
+////                colorShifted
+////                    .blendMode(.screen)
+//
+//            }
+//
+//        }
+//
+//    }
     
 }
 

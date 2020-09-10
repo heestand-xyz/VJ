@@ -40,6 +40,8 @@ class VideoJockey: ObservableObject {
         didSet {
             trailer.add(Double(audioBass), at: 1)
             
+            blur = audioBass
+            
         }
     }
     
@@ -87,8 +89,11 @@ class VideoJockey: ObservableObject {
     
     // MARK: - Other
     
-    @Published var flash: Bool = false
+    // currently not in use
+    @Published var mainTouch: Bool = false
     
+    @Published var blur: CGFloat = 0.0
+
     #if canImport(AirKit)
     @Published var isAirPlaying: Bool = false
     #endif

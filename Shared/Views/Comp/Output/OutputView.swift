@@ -30,12 +30,6 @@ struct OutputView: View {
                     
                 }
                 
-                // Flash
-                if vj.flash {
-                    Color.primary
-                        .blendMode(.difference)
-                }
-                
                 // Test
                 if vj.test {
                     TestPattern()

@@ -60,7 +60,7 @@ struct ContentView: View {
                         ZStack {
                             FinalView(vj: vj)
                             InteractView { interacted in
-                                vj.flash = interacted
+                                vj.mainTouch = interacted
                             }
                         }
                         .aspectRatio(vj.aspectRatio, contentMode: .fit)

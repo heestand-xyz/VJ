@@ -11,40 +11,44 @@ struct TagView: View {
     
     var body: some View {
         
-        VStack {
-            Spacer()
-            HStack {
+        GeometryReader { geo in
+            
+            VStack {
                 Spacer()
-                Text("Y")
+                HStack {
+                    Spacer()
+                    Text("Y")
+                    Spacer()
+                    Text("X")
+                    Spacer()
+                    Text("A")
+                    Spacer()
+                }
                 Spacer()
-                Text("X")
+                HStack {
+                    Spacer()
+                    Text("P")
+                    Spacer()
+                    Text("A")
+                    Spacer()
+                    Text("U")
+                    Spacer()
+                }
                 Spacer()
-                Text("A")
+                HStack {
+                    Spacer()
+                    Text("H")
+                    Spacer()
+                    Text("X")
+                    Spacer()
+                    Text("G")
+                    Spacer()
+                }
                 Spacer()
             }
-            Spacer()
-            HStack {
-                Spacer()
-                Text("P")
-                Spacer()
-                Text("A")
-                Spacer()
-                Text("U")
-                Spacer()
-            }
-            Spacer()
-            HStack {
-                Spacer()
-                Text("H")
-                Spacer()
-                Text("X")
-                Spacer()
-                Text("G")
-                Spacer()
-            }
-            Spacer()
+            .font(.system(size: geo.size.height * 0.02, weight: .thin, design: .monospaced))
+            
         }
-        .mono()
         .aspectRatio(1.0, contentMode: .fit)
         
     }
