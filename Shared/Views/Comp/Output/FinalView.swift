@@ -24,34 +24,42 @@ struct FinalView: View {
             ZStack {
                 
                 Color.black
-                
-                Group {
                     
-                    ZStack {
-                        Color(hue: vj.colorWheel, saturation: 1.0, brightness: 1.0)
-                        output
-                    }
-                    .offset(x: -vj.colorShift * geo.size.height * 0.01)
+                ZStack {
                     
-                    ZStack {
-                        Color(hue: (1.0 / 3.0 + vj.colorWheel).truncatingRemainder(dividingBy: 1.0), saturation: 1.0, brightness: 1.0)
-                        output
-                    }
+                    Color.black
                     
-                    ZStack {
-                        Color(hue: (2.0 / 3.0 + vj.colorWheel).truncatingRemainder(dividingBy: 1.0), saturation: 1.0, brightness: 1.0)
-                        output
+                    Group {
+                        
+                        ZStack {
+                            Color(hue: vj.colorWheel, saturation: 1.0, brightness: 1.0)
+                            output
+                        }
+                        .offset(x: -vj.colorShift * geo.size.height * 0.01)
+                        
+                        ZStack {
+                            Color(hue: (1.0 / 3.0 + vj.colorWheel).truncatingRemainder(dividingBy: 1.0), saturation: 1.0, brightness: 1.0)
+                            output
+                        }
+                        
+                        ZStack {
+                            Color(hue: (2.0 / 3.0 + vj.colorWheel).truncatingRemainder(dividingBy: 1.0), saturation: 1.0, brightness: 1.0)
+                            output
+                        }
+                        .offset(x: vj.colorShift * geo.size.height * 0.01)
+                        
                     }
-                    .offset(x: vj.colorShift * geo.size.height * 0.01)
+                    .aspectRatio(vj.aspectRatio, contentMode: .fit)
+                    .padding(vj.padding * geo.size.height)
+                    .compositingGroup()
+                    .blendMode(.screen)
                     
                 }
-                .aspectRatio(vj.aspectRatio, contentMode: .fit)
-                .padding(vj.padding * geo.size.height)
                 .compositingGroup()
-                .blendMode(.screen)
+                .blur(radius: vj.blur * geo.size.height * 0.01)
+                .clipped()
+                
             }
-            .compositingGroup()
-            .blur(radius: vj.blur * geo.size.height * 0.01)
             
         }
         
