@@ -108,7 +108,7 @@ class VideoJockey: ObservableObject {
 //    let oscIn: OSCIn
 //    let oscOut: OSCOut
     
-    @Published var aspectRatio: CGFloat = 16 / 10
+    @Published var aspectRatio: CGFloat = 16 / 9
     
     @Published var padding: CGFloat = 0.0
     
