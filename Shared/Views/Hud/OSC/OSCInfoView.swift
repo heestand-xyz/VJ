@@ -37,7 +37,7 @@ struct OSCInfoView: View {
             Text(self.connection.ipAddress ?? "#.#.#.#")
                 .lineLimit(1)
             Text(":" + String(describing: self.settings.serverPort))
-                .foregroundColor(self.osc.serverStarted ? .gray : .red)
+                .foregroundColor(.gray)
             
         }
         .font(.system(size: 12, weight: .regular, design: .monospaced))

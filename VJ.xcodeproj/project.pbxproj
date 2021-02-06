@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52EC1377459F3DD8BC79A533 /* Pods_VJ__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C383ED13CF3C52B4E0724E /* Pods_VJ__iOS_.framework */; };
-		CDF70AA4EFE316F3C8B585DA /* Pods_VJ__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D8A2013955A4CA42A879B /* Pods_VJ__macOS_.framework */; };
+		E5A6834325CEF0F5000A4EBD /* Trails in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6834225CEF0F5000A4EBD /* Trails */; };
+		E5A6834625CEF105000A4EBD /* MultiViews in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6834525CEF105000A4EBD /* MultiViews */; };
+		E5A6834925CEF110000A4EBD /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6834825CEF110000A4EBD /* PolyKit */; };
+		E5A6834C25CEF11C000A4EBD /* AirKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6834B25CEF11C000A4EBD /* AirKit */; };
+		E5A6834E25CEF125000A4EBD /* Trails in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6834D25CEF125000A4EBD /* Trails */; };
+		E5A6835025CEF127000A4EBD /* MultiViews in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6834F25CEF127000A4EBD /* MultiViews */; };
+		E5A6835225CEF12A000A4EBD /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6835125CEF12A000A4EBD /* PolyKit */; };
+		E5A6835525CEF167000A4EBD /* OSCKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5A6835425CEF167000A4EBD /* OSCKit */; };
 		F00CEC7424FE748C00C4C4DE /* OSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00CEC7324FE748C00C4C4DE /* OSC.swift */; };
 		F00CEC7524FE748C00C4C4DE /* OSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00CEC7324FE748C00C4C4DE /* OSC.swift */; };
 		F00CEC7724FE74BD00C4C4DE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00CEC7624FE74BD00C4C4DE /* Settings.swift */; };
@@ -29,7 +35,6 @@
 		F0349CF124FA6E3F00406864 /* HexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0349CEF24FA6E3F00406864 /* HexView.swift */; };
 		F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0381E9724E823CA00EFEC06 /* AirKit */; };
 		F04671A324E95F0400C6921D /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F04671A224E95F0400C6921D /* PolyKit */; };
-		F04671A524E95F0800C6921D /* PolyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F04671A424E95F0800C6921D /* PolyKit */; };
 		F04671A724E95F4000C6921D /* HexGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671A624E95F4000C6921D /* HexGridView.swift */; };
 		F04671A824E95F4000C6921D /* HexGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671A624E95F4000C6921D /* HexGridView.swift */; };
 		F04671AA24E9606E00C6921D /* PolyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671A924E9606E00C6921D /* PolyView.swift */; };
@@ -45,8 +50,6 @@
 		F04671BB24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
 		F04671BC24E9B93100C6921D /* CompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04671BA24E9B93100C6921D /* CompView.swift */; };
 		F0642F8024EAE2A000693C7E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A65E7C24E47B090090895D /* GridView.swift */; };
-		F07907C624FEB1270083EE9C /* Trails in Frameworks */ = {isa = PBXBuildFile; productRef = F07907C524FEB1270083EE9C /* Trails */; };
-		F07907C824FEB12F0083EE9C /* Trails in Frameworks */ = {isa = PBXBuildFile; productRef = F07907C724FEB12F0083EE9C /* Trails */; };
 		F07B98B424EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F07B98B524EA977A00CF83A5 /* CornerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B98B324EA977A00CF83A5 /* CornerSettingView.swift */; };
 		F08C1D8824EC488000639315 /* TestPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C1D8724EC488000639315 /* TestPattern.swift */; };
@@ -63,8 +66,6 @@
 		F094B20424E44C8D00039BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094B1EE24E44C8D00039BCD /* Assets.xcassets */; };
 		F094B20E24E44CBD00039BCD /* VideoJockey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VideoJockey.swift */; };
 		F094B20F24E44CBD00039BCD /* VideoJockey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B20D24E44CBD00039BCD /* VideoJockey.swift */; };
-		F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */ = {isa = PBXBuildFile; productRef = F094B21124E451A500039BCD /* MultiplatformTypes */; };
-		F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */ = {isa = PBXBuildFile; productRef = F094B21424E451AC00039BCD /* MultiplatformTypes */; };
 		F094B21724E4563300039BCD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B21624E4563300039BCD /* CircleView.swift */; };
 		F094B21824E4563300039BCD /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F094B21624E4563300039BCD /* CircleView.swift */; };
 		F0A65E7D24E47B090090895D /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A65E7C24E47B090090895D /* GridView.swift */; };
@@ -83,12 +84,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E02DE73FCA08FDD296EC191 /* Pods-VJ (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VJ (iOS).debug.xcconfig"; path = "Target Support Files/Pods-VJ (iOS)/Pods-VJ (iOS).debug.xcconfig"; sourceTree = "<group>"; };
-		32B7E9EF8E0CE8D2B1320DCB /* Pods-VJ (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VJ (macOS).release.xcconfig"; path = "Target Support Files/Pods-VJ (macOS)/Pods-VJ (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		822D8A2013955A4CA42A879B /* Pods_VJ__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VJ__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		87717DBED83F542099303A07 /* Pods-VJ (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VJ (iOS).release.xcconfig"; path = "Target Support Files/Pods-VJ (iOS)/Pods-VJ (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		B5C383ED13CF3C52B4E0724E /* Pods_VJ__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VJ__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE0096AB39A385BD74147E1C /* Pods-VJ (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VJ (macOS).debug.xcconfig"; path = "Target Support Files/Pods-VJ (macOS)/Pods-VJ (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		F00CEC7324FE748C00C4C4DE /* OSC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSC.swift; sourceTree = "<group>"; };
 		F00CEC7624FE74BD00C4C4DE /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F00CEC7924FE752300C4C4DE /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -133,11 +130,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F07907C624FEB1270083EE9C /* Trails in Frameworks */,
 				F04671A324E95F0400C6921D /* PolyKit in Frameworks */,
+				E5A6835525CEF167000A4EBD /* OSCKit in Frameworks */,
+				E5A6834325CEF0F5000A4EBD /* Trails in Frameworks */,
+				E5A6834C25CEF11C000A4EBD /* AirKit in Frameworks */,
+				E5A6834625CEF105000A4EBD /* MultiViews in Frameworks */,
+				E5A6834925CEF110000A4EBD /* PolyKit in Frameworks */,
 				F0381E9824E823CA00EFEC06 /* AirKit in Frameworks */,
-				F094B21224E451A500039BCD /* MultiplatformTypes in Frameworks */,
-				52EC1377459F3DD8BC79A533 /* Pods_VJ__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,27 +144,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F094B21524E451AC00039BCD /* MultiplatformTypes in Frameworks */,
-				F07907C824FEB12F0083EE9C /* Trails in Frameworks */,
-				F04671A524E95F0800C6921D /* PolyKit in Frameworks */,
-				CDF70AA4EFE316F3C8B585DA /* Pods_VJ__macOS_.framework in Frameworks */,
+				E5A6835225CEF12A000A4EBD /* PolyKit in Frameworks */,
+				E5A6834E25CEF125000A4EBD /* Trails in Frameworks */,
+				E5A6835025CEF127000A4EBD /* MultiViews in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C2DFCEEC10432A7A1F81A3E1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0E02DE73FCA08FDD296EC191 /* Pods-VJ (iOS).debug.xcconfig */,
-				87717DBED83F542099303A07 /* Pods-VJ (iOS).release.xcconfig */,
-				DE0096AB39A385BD74147E1C /* Pods-VJ (macOS).debug.xcconfig */,
-				32B7E9EF8E0CE8D2B1320DCB /* Pods-VJ (macOS).release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		F00CEC7F24FE755600C4C4DE /* IO */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +222,6 @@
 				F094B1FC24E44C8D00039BCD /* macOS */,
 				F094B1F424E44C8D00039BCD /* Products */,
 				F094B21324E451AC00039BCD /* Frameworks */,
-				C2DFCEEC10432A7A1F81A3E1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -379,11 +365,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F094B20724E44C8D00039BCD /* Build configuration list for PBXNativeTarget "VJ (iOS)" */;
 			buildPhases = (
-				324B952F83EBCD7AC58D1D96 /* [CP] Check Pods Manifest.lock */,
 				F094B1EF24E44C8D00039BCD /* Sources */,
 				F094B1F024E44C8D00039BCD /* Frameworks */,
 				F094B1F124E44C8D00039BCD /* Resources */,
-				BE59C63AD3468175E0B5F105 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,10 +375,13 @@
 			);
 			name = "VJ (iOS)";
 			packageProductDependencies = (
-				F094B21124E451A500039BCD /* MultiplatformTypes */,
 				F0381E9724E823CA00EFEC06 /* AirKit */,
 				F04671A224E95F0400C6921D /* PolyKit */,
-				F07907C524FEB1270083EE9C /* Trails */,
+				E5A6834225CEF0F5000A4EBD /* Trails */,
+				E5A6834525CEF105000A4EBD /* MultiViews */,
+				E5A6834825CEF110000A4EBD /* PolyKit */,
+				E5A6834B25CEF11C000A4EBD /* AirKit */,
+				E5A6835425CEF167000A4EBD /* OSCKit */,
 			);
 			productName = "VJ (iOS)";
 			productReference = F094B1F324E44C8D00039BCD /* VJ.app */;
@@ -416,9 +403,9 @@
 			);
 			name = "VJ (macOS)";
 			packageProductDependencies = (
-				F094B21424E451AC00039BCD /* MultiplatformTypes */,
-				F04671A424E95F0800C6921D /* PolyKit */,
-				F07907C724FEB12F0083EE9C /* Trails */,
+				E5A6834D25CEF125000A4EBD /* Trails */,
+				E5A6834F25CEF127000A4EBD /* MultiViews */,
+				E5A6835125CEF12A000A4EBD /* PolyKit */,
 			);
 			productName = "VJ (macOS)";
 			productReference = F094B1FB24E44C8D00039BCD /* VJ.app */;
@@ -451,8 +438,11 @@
 			);
 			mainGroup = F094B1E624E44C8B00039BCD;
 			packageReferences = (
-				F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */,
-				F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */,
+				E5A6834125CEF0F5000A4EBD /* XCRemoteSwiftPackageReference "Trails" */,
+				E5A6834425CEF105000A4EBD /* XCRemoteSwiftPackageReference "MultiViews" */,
+				E5A6834725CEF110000A4EBD /* XCRemoteSwiftPackageReference "PolyKit" */,
+				E5A6834A25CEF11C000A4EBD /* XCRemoteSwiftPackageReference "AirKit" */,
+				E5A6835325CEF167000A4EBD /* XCRemoteSwiftPackageReference "OSCKit" */,
 			);
 			productRefGroup = F094B1F424E44C8D00039BCD /* Products */;
 			projectDirPath = "";
@@ -506,28 +496,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		324B952F83EBCD7AC58D1D96 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VJ (iOS)-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8F02F25D0D574EA8A73AF5F8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,23 +511,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VJ (macOS)/Pods-VJ (macOS)-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE59C63AD3468175E0B5F105 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VJ (iOS)/Pods-VJ (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VJ (iOS)/Pods-VJ (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VJ (iOS)/Pods-VJ (iOS)-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -757,7 +708,6 @@
 		};
 		F094B20824E44C8D00039BCD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E02DE73FCA08FDD296EC191 /* Pods-VJ (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -781,7 +731,6 @@
 		};
 		F094B20924E44C8D00039BCD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87717DBED83F542099303A07 /* Pods-VJ (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -806,7 +755,6 @@
 		};
 		F094B20B24E44C8D00039BCD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE0096AB39A385BD74147E1C /* Pods-VJ (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -832,7 +780,6 @@
 		};
 		F094B20C24E44C8D00039BCD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32B7E9EF8E0CE8D2B1320DCB /* Pods-VJ (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -889,25 +836,89 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */ = {
+		E5A6834125CEF0F5000A4EBD /* XCRemoteSwiftPackageReference "Trails" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hexagons/Trails.git";
+			repositoryURL = "https://github.com/heestand-xyz/Trails";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.2;
 			};
 		};
-		F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */ = {
+		E5A6834425CEF105000A4EBD /* XCRemoteSwiftPackageReference "MultiViews" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hexagons/MultiplatformTypes.git";
+			repositoryURL = "https://github.com/heestand-xyz/MultiViews";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.9;
+				minimumVersion = 1.1.1;
+			};
+		};
+		E5A6834725CEF110000A4EBD /* XCRemoteSwiftPackageReference "PolyKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heestand-xyz/PolyKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+		E5A6834A25CEF11C000A4EBD /* XCRemoteSwiftPackageReference "AirKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heestand-xyz/AirKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		E5A6835325CEF167000A4EBD /* XCRemoteSwiftPackageReference "OSCKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sammysmallman/OSCKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E5A6834225CEF0F5000A4EBD /* Trails */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834125CEF0F5000A4EBD /* XCRemoteSwiftPackageReference "Trails" */;
+			productName = Trails;
+		};
+		E5A6834525CEF105000A4EBD /* MultiViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834425CEF105000A4EBD /* XCRemoteSwiftPackageReference "MultiViews" */;
+			productName = MultiViews;
+		};
+		E5A6834825CEF110000A4EBD /* PolyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834725CEF110000A4EBD /* XCRemoteSwiftPackageReference "PolyKit" */;
+			productName = PolyKit;
+		};
+		E5A6834B25CEF11C000A4EBD /* AirKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834A25CEF11C000A4EBD /* XCRemoteSwiftPackageReference "AirKit" */;
+			productName = AirKit;
+		};
+		E5A6834D25CEF125000A4EBD /* Trails */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834125CEF0F5000A4EBD /* XCRemoteSwiftPackageReference "Trails" */;
+			productName = Trails;
+		};
+		E5A6834F25CEF127000A4EBD /* MultiViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834425CEF105000A4EBD /* XCRemoteSwiftPackageReference "MultiViews" */;
+			productName = MultiViews;
+		};
+		E5A6835125CEF12A000A4EBD /* PolyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6834725CEF110000A4EBD /* XCRemoteSwiftPackageReference "PolyKit" */;
+			productName = PolyKit;
+		};
+		E5A6835425CEF167000A4EBD /* OSCKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5A6835325CEF167000A4EBD /* XCRemoteSwiftPackageReference "OSCKit" */;
+			productName = OSCKit;
+		};
 		F0381E9724E823CA00EFEC06 /* AirKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AirKit;
@@ -915,30 +926,6 @@
 		F04671A224E95F0400C6921D /* PolyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PolyKit;
-		};
-		F04671A424E95F0800C6921D /* PolyKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = PolyKit;
-		};
-		F07907C524FEB1270083EE9C /* Trails */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */;
-			productName = Trails;
-		};
-		F07907C724FEB12F0083EE9C /* Trails */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F07907C424FEB1270083EE9C /* XCRemoteSwiftPackageReference "Trails" */;
-			productName = Trails;
-		};
-		F094B21124E451A500039BCD /* MultiplatformTypes */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */;
-			productName = MultiplatformTypes;
-		};
-		F094B21424E451AC00039BCD /* MultiplatformTypes */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F094B21024E451A500039BCD /* XCRemoteSwiftPackageReference "MultiplatformTypes" */;
-			productName = MultiplatformTypes;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

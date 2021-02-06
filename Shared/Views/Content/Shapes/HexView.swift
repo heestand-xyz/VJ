@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MultiViews
 
 struct HexView: View {
     
@@ -43,15 +44,16 @@ struct HexView: View {
                 PolyView(count: 6, corner: cornerFlow, onVJ: $onVJ, onDJ: $onDJ, hint: hint)
             }
         }
-            .frame(width: length,
-                   height: length)
-            .frame(width: width,
-                   height: height)
-        .onInteract(on: $onVJ, drag: Binding<CGVector>(get: { .zero }, set: { vector in
-            flow = vector.dy
+        .frame(width: length, height: length)
+        .frame(width: width,  height: height)
+        .gesture(DragGesture(minimumDistance: 0.0).onChanged({ value in
+            if !onVJ { onVJ = true }
+            flow = value.translation.height
+        }).onEnded({ _ in
+            onVJ = false
         }))
-            .offset(x: isOddRow ? width / 2 : 0.0)
-            .opacity(!isOutside ? 1.0 : 0.0)
+        .offset(x: isOddRow ? width / 2 : 0.0)
+        .opacity(!isOutside ? 1.0 : 0.0)
     }
     
 }

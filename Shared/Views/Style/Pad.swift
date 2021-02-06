@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MultiplatformTypes
+import MultiViews
 
 struct Pad: View {
     
@@ -40,8 +40,11 @@ struct Pad: View {
             .foregroundColor(on != (colorScheme == .light) ? .black : .white)
             .padding()
             
+            MVInteractView { interaction in
+                on = interaction == .started
+            }
+            
         }
-        .onInteract(on: $on)
         
     }
     

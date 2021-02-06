@@ -52,10 +52,9 @@ struct OSCSettingsPopupView: View {
                     }, set: { portText in
                         guard let port = Int(portText) else { return }
                         self.settings.serverPort = port
-                    })) {
-//                        self.osc.startListen()
-                    }
-                        .foregroundColor(osc.serverStarted ? .primary : .red)
+                        self.osc.updateSettings()
+                    }))
+                        .foregroundColor(.primary)
                         .padding(5)
                         .background(Color.primary.opacity(0.1))
                         .cornerRadius(5)

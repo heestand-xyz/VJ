@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MultiViews
 
 struct GridView: View {
     
@@ -28,8 +29,14 @@ struct GridView: View {
                         ForEach(0..<count(size: geo.size)) { i in
                             if i < grid.count {
                                 
-                                CircleView(onVJ: isOn(at: i), onDJ: $onDJ, hint: hint)
-                                    .onInteract(on: isOn(at: i))
+                                ZStack {
+                                    CircleView(onVJ: isOn(at: i), onDJ: $onDJ, hint: hint)
+                                    MVInteractView { interaction in
+                                        guard i < grid.count else { return }
+                                        grid[i].isOn = interaction == .started
+                                    }
+                                    .layoutPriority(-1)
+                                }
                                     .frame(width: length(size: geo.size),
                                            height: length(size: geo.size))
                                 

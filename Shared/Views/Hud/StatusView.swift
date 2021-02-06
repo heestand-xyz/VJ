@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MultiplatformTypes
+import MultiViews
 
 struct StatusView: View {
     

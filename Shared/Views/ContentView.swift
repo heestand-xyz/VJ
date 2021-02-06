@@ -9,7 +9,7 @@ import SwiftUI
 #if canImport(AirKit)
 import AirKit
 #endif
-import MultiplatformTypes
+import MultiViews
 import Trails
 
 struct ContentView: View {
@@ -59,8 +59,8 @@ struct ContentView: View {
                         
                         ZStack {
                             FinalView(vj: vj)
-                            InteractView { interacted in
-                                vj.mainTouch = interacted
+                            MVInteractView { interacted in
+                                vj.mainTouch = interacted == .started
                             }
                         }
                         .aspectRatio(vj.aspectRatio, contentMode: .fit)

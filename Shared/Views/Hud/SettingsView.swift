@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MultiplatformTypes
+import MultiViews
 
 struct SettingsView: View {
     
@@ -43,7 +43,8 @@ struct SettingsView: View {
             HStack(alignment: .top, spacing: 20) {
                 
                 VStack {
-                    BasicToggle(isOn: $vj.preview)
+                    Toggle(isOn: $vj.preview, label: { EmptyView() })
+                        .if(iOS, { $0.frame(width: 50).offset(x: -5) })
                     Label("View", systemImage: "rectangle.dashed")
                         .mono()
                 }

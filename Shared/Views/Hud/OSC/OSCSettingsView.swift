@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MultiplatformTypes
+import MultiViews
 
 struct OSCSettingsView: View {
     
@@ -46,12 +46,13 @@ struct OSCSettingsView: View {
                 
                 // Beats
                 HStack {
-                    BasicToggle(isOn: Binding<Bool>(get: {
+                    Toggle(isOn: Binding<Bool>(get: {
                         vj.audioBeats > 0.0
                     }, set: { on in
                         vj.audioBeats = on ? 1.0 : 0.0
-                    }))
-                        .toggleStyle(SwitchToggleStyle(tint: color(at: 0.0)))
+                    }), label: { EmptyView() })
+                    .toggleStyle(SwitchToggleStyle(tint: color(at: 0.0)))
+                    .if(iOS, { $0.frame(width: 50).offset(x: -5) })
                     Text("Beats")
                         .frame(width: 65, alignment: .leading)
                         .foregroundColor(color(at: 0.0))
@@ -61,12 +62,13 @@ struct OSCSettingsView: View {
                 
                 // Bass
                 HStack {
-                    BasicToggle(isOn: Binding<Bool>(get: {
+                    Toggle(isOn: Binding<Bool>(get: {
                         vj.audioBass > 0.0
                     }, set: { on in
                         vj.audioBass = on ? 1.0 : 0.0
-                    }))
-                        .toggleStyle(SwitchToggleStyle(tint: color(at: 1.0 / 4.0)))
+                    }), label: { EmptyView() })
+                    .toggleStyle(SwitchToggleStyle(tint: color(at: 1.0 / 4.0)))
+                    .if(iOS, { $0.frame(width: 50).offset(x: -5) })
                     Text("Bass")
                         .frame(width: 65, alignment: .leading)
                         .foregroundColor(color(at: 1.0 / 4.0))
@@ -76,12 +78,13 @@ struct OSCSettingsView: View {
                 
                 // Chords
                 HStack {
-                    BasicToggle(isOn: Binding<Bool>(get: {
+                    Toggle(isOn: Binding<Bool>(get: {
                         vj.audioChords > 0.0
                     }, set: { on in
                         vj.audioChords = on ? 1.0 : 0.0
-                    }))
-                        .toggleStyle(SwitchToggleStyle(tint: color(at: 2.0 / 4.0)))
+                    }), label: { EmptyView() })
+                    .toggleStyle(SwitchToggleStyle(tint: color(at: 2.0 / 4.0)))
+                    .if(iOS, { $0.frame(width: 50).offset(x: -5) })
                     Text("Chords")
                         .frame(width: 65, alignment: .leading)
                         .foregroundColor(color(at: 2.0 / 4.0))
@@ -91,12 +94,13 @@ struct OSCSettingsView: View {
                 
                 // Melody
                 HStack {
-                    BasicToggle(isOn: Binding<Bool>(get: {
+                    Toggle(isOn: Binding<Bool>(get: {
                         vj.audioMelody > 0.0
                     }, set: { on in
                         vj.audioMelody = on ? 1.0 : 0.0
-                    }))
-                        .toggleStyle(SwitchToggleStyle(tint: color(at: 3.0 / 4.0)))
+                    }), label: { EmptyView() })
+                    .toggleStyle(SwitchToggleStyle(tint: color(at: 3.0 / 4.0)))
+                    .if(iOS, { $0.frame(width: 50).offset(x: -5) })
                     Text("Melody")
                         .frame(width: 65, alignment: .leading)
                         .foregroundColor(color(at: 3.0 / 4.0))

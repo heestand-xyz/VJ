@@ -16,7 +16,7 @@ import SwiftUI
 #if canImport(AppKit)
 import AppKit
 #endif
-import MultiplatformTypes
+import MultiViews
 import Trails
 
 class VideoJockey: ObservableObject {
@@ -120,8 +120,8 @@ class VideoJockey: ObservableObject {
 //        trailer.circlesActive = true
 //        trailer.circleBorder = false
 //        trailer.circleRadius = 2
-        trailer.fixedMin = 0.0
-        trailer.fixedMax = 1.0
+//        trailer.fixedMin = 0.0
+//        trailer.fixedMax = 1.0
         
         Connection.main.monitor()
         Connection.main.check()

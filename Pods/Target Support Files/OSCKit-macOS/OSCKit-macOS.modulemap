@@ -1,6 +1,0 @@
-framework module OSCKit {
-  umbrella header "OSCKit-macOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
