@@ -20,18 +20,18 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
-            
-            OSCInfoView(osc: OSC.main,
-                        settings: Settings.main,
-                        connection: Connection.main)
-                .frame(maxWidth: 500)
-                .offset(y: 5)
-            
-            Divider()
-            
-            GeometryReader { geo in
-                    
+        GeometryReader { mainGeo in
+             
+            VStack {
+                
+                OSCInfoView(osc: OSC.main,
+                            settings: Settings.main,
+                            connection: Connection.main)
+                    .frame(maxWidth: 500)
+                    .offset(y: 5)
+                
+                Divider()
+                
                 HStack(spacing: 0.0) {
                     
                     // Status
@@ -48,7 +48,6 @@ struct ContentView: View {
                         Spacer()
                     }
                     .frame(width: 350)
-//                    .frame(width: max(300, (geo.size.width - (geo.size.height * vj.aspectRatio)) / 2))
                     
                     Divider()
                     Spacer()
@@ -79,20 +78,20 @@ struct ContentView: View {
                         Spacer()
                     }
                     .frame(width: 350)
-//                    .frame(width: max(300, (geo.size.width - (geo.size.height * vj.aspectRatio)) / 2))
                     
                 }
                 
+                Divider()
+                
+                // Input Content
+                InputView(vj: vj)
+                    .frame(height: mainGeo.size.height * 0.5)
+                
             }
             
-            Divider()
-            
-            // Input Content
-            InputView(vj: vj)
-                .frame(height: 600)
-            
-        }
+       }
         .ignoresSafeArea(edges: .top)
+       
 
     }
     

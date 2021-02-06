@@ -199,10 +199,10 @@ class VideoJockey: ObservableObject {
         func val() -> CGFloat {
             if let val: Int = value as? Int {
                 return CGFloat(val) / 127
-            } else if let val: CGFloat = value as? CGFloat {
-                return val
-            } else if let val: [CGFloat] = value as? [CGFloat] {
-                return val.first ?? 0.0
+            } else if let val: Float = value as? Float {
+                return CGFloat(val)
+            } else if let val: [Float] = value as? [Float] {
+                return CGFloat(val.first ?? 0.0)
             } else {
                 return 0.0
             }

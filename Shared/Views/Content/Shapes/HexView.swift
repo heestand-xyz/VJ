@@ -46,11 +46,13 @@ struct HexView: View {
         }
         .frame(width: length, height: length)
         .frame(width: width,  height: height)
+        .background(Color.black.opacity(0.001))
         .gesture(DragGesture(minimumDistance: 0.0).onChanged({ value in
             if !onVJ { onVJ = true }
             flow = value.translation.height
         }).onEnded({ _ in
             onVJ = false
+            flow = 0.0
         }))
         .offset(x: isOddRow ? width / 2 : 0.0)
         .opacity(!isOutside ? 1.0 : 0.0)
